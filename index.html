@@ -97,6 +97,8 @@ main { max-width: 800px; margin: 0 auto; }
 .section-title.body { color: var(--c8); border-color: var(--c8); }
 .section-title.sexual { color: #c97f7f; border-color: #c97f7f; }
 .section-title.clothes { color: #7f9dc9; border-color: #7f9dc9; }
+.section.view { border-color: var(--c8); }
+.section-title.view { color: var(--c8); border-color: var(--c8); }
 
 .table-wrap {
   background: var(--surface);
@@ -290,6 +292,62 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
   </div>
 </section>
 
+<section class="section view">
+  <h2 class="section-title view">視聴者視点・構図タグ</h2>
+  <div class="table-wrap">
+    <table>
+      <tr><th>タグ</th><th>意味</th></tr>
+      <tr><td>looking_at_viewer</td><td>視聴者を見つめる</td></tr>
+      <tr><td>looking_back</td><td>振り返って視聴者を見る</td></tr>
+      <tr><td>facing_viewer</td><td>正面を向いている</td></tr>
+      <tr><td>from_above</td><td>俯瞰・上からの視点</td></tr>
+      <tr><td>from_below</td><td>仰視・下からの視点</td></tr>
+      <tr><td>profile</td><td>横顔・プロフィール</td></tr>
+      <tr><td>portrait</td><td>胸から上の構図</td></tr>
+      <tr><td>cowboy_shot</td><td>膝から上の構図</td></tr>
+      <tr><td>upper_body</td><td>上半身の構図</td></tr>
+      <tr><td>full_body</td><td>全身が映る構図</td></tr>
+      <tr><td>close-up</td><td>接写・アップ</td></tr>
+      <tr><td>dutch_angle</td><td>ダッチアングル（傾いた構図）</td></tr>
+      <tr><td>overhead</td><td>真上からの俯瞰</td></tr>
+      <tr><td>worm's_eye_view</td><td>極端な下からの視点</td></tr>
+      <tr><td>bird's_eye_view</td><td>鳥瞰図的な俯瞰</td></tr>
+      <tr><td>side_view</td><td>横からの視点</td></tr>
+      <tr><td>back</td><td>後ろ姿</td></tr>
+          <tr><td>pov</td><td>主観視点（視聴者自身の目線）</td></tr>
+      <tr><td>pov_hands</td><td>主観視点で手が見える</td></tr>
+      <tr><td>reaching_towards_viewer</td><td>視聴者に手を伸ばす</td></tr>
+      <tr><td>hand_focus</td><td>手にフォーカス</td></tr>
+      <tr><td>holding_hands</td><td>手を繋ぐ</td></tr>
+      <tr><td>lap_pov</td><td>膝枕視点</td></tr>
+      <tr><td>between_legs</td><td>脚の間からの視点</td></tr>
+      <tr><td>upskirt</td><td>スカート内を見上げる</td></tr>
+      <tr><td>peeking</td><td>覗き込む</td></tr>
+      <tr><td>looking_up</td><td>上目遣い（キャラクターが上を見る）</td></tr>
+      <tr><td>kneeling</td><td>膝をつく（POVと組み合わせやすい）</td></tr>
+      <tr><td>pov_cheek_squish</td><td>頬をつねる</td></tr>
+      <tr><td>pov_headpat</td><td>頭を撫でる</td></tr>
+      <tr><td>pov_hand_on_cheek</td><td>頬に手を置く</td></tr>
+      <tr><td>pov_embrace</td><td>抱きしめる</td></tr>
+      <tr><td>pov_carrying</td><td>お姫様抱っこ</td></tr>
+      <tr><td>pov_sitting_on_lap</td><td>膝上に座る</td></tr>
+      <tr><td>pov_leaning_forward</td><td>前のめりになる</td></tr>
+      <tr><td>pov_clothes_pull</td><td>服を引っ張る</td></tr>
+      <tr><td>pov_undressing</td><td>脱がせる</td></tr>
+      <tr><td>pov_grabbing</td><td>掴む</td></tr>
+      <tr><td>pov_kiss</td><td>キス視点</td></tr>
+      <tr><td>pov_hug</td><td>抱きつき視点</td></tr>
+      <tr><td>pov_close</td><td>至近距離</td></tr>
+      <tr><td>pov_towering</td><td>上から見下ろす（キャラが大きく見える）</td></tr>
+      <tr><td>pov_hair</td><td>髪が視界に入る</td></tr>
+      <tr><td>pov_breasts</td><td>胸視点</td></tr>
+      <tr><td>pov_crotch</td><td>股間視点</td></tr>
+      <tr><td>pov_foot</td><td>足視点</td></tr>
+      <tr><td>pov_face</td><td>顔視点</td></tr>
+</table>
+  </div>
+</section>
+
 <section class="section eyes">
   <h2 class="section-title eyes">目のタグ</h2>
   <div class="table-wrap">
@@ -380,7 +438,44 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
       <tr><td>french_braid</td><td>フレンチブレード</td></tr>
       <tr><td>single_braid</td><td>一本の三つ編み</td></tr>
       <tr><td>twin_braids</td><td>ツインテール三つ編み</td></tr>
-    </table>
+          <tr><td>bow</td><td>リボン・蝶結び（一般）</td></tr>
+      <tr><td>front_bow</td><td>前に付いたリボン</td></tr>
+      <tr><td>side_bow</td><td>横に付いたリボン</td></tr>
+      <tr><td>waist_bow</td><td>腰に付いたリボン</td></tr>
+      <tr><td>wrist_bow</td><td>手首のリボン</td></tr>
+      <tr><td>ankle_bow</td><td>足首のリボン</td></tr>
+      <tr><td>bow_earrings</td><td>リボンイヤリング</td></tr>
+      <tr><td>bow_necklace</td><td>リボンネックレス</td></tr>
+      <tr><td>bow_bra</td><td>リボンブラ</td></tr>
+      <tr><td>bow_panties</td><td>リボン付きパンツ</td></tr>
+      <tr><td>frilled_bow</td><td>フリル付きリボン</td></tr>
+      <tr><td>polka_dot_bow</td><td>水玉リボン</td></tr>
+      <tr><td>striped_bow</td><td>ストライプリボン</td></tr>
+      <tr><td>plaid_bow</td><td>チェックリボン</td></tr>
+      <tr><td>lace_bow</td><td>レースリボン</td></tr>
+      <tr><td>satin_bow</td><td>サテンリボン</td></tr>
+      <tr><td>silk_bow</td><td>シルクリボン</td></tr>
+      <tr><td>red_bow</td><td>赤いリボン</td></tr>
+      <tr><td>blue_bow</td><td>青いリボン</td></tr>
+      <tr><td>pink_bow</td><td>ピンクのリボン</td></tr>
+      <tr><td>black_bow</td><td>黒いリボン</td></tr>
+      <tr><td>white_bow</td><td>白いリボン</td></tr>
+      <tr><td>yellow_bow</td><td>黄色いリボン</td></tr>
+      <tr><td>green_bow</td><td>緑のリボン</td></tr>
+      <tr><td>purple_bow</td><td>紫のリボン</td></tr>
+      <tr><td>lace_hairband</td><td>レースカチューシャ</td></tr>
+      <tr><td>frilled_hairband</td><td>フリルカチューシャ</td></tr>
+      <tr><td>black_hairband</td><td>黒いカチューシャ</td></tr>
+      <tr><td>white_hairband</td><td>白いカチューシャ</td></tr>
+      <tr><td>red_hairband</td><td>赤いカチューシャ</td></tr>
+      <tr><td>pink_hairband</td><td>ピンクのカチューシャ</td></tr>
+      <tr><td>maid_headdress</td><td>メイドカチューシャ</td></tr>
+      <tr><td>bunny_hairband</td><td>バニーカチューシャ</td></tr>
+      <tr><td>cat_ear_hairband</td><td>猫耳カチューシャ</td></tr>
+      <tr><td>jeweled_hairband</td><td>宝石付きカチューシャ</td></tr>
+      <tr><td>metal_hairband</td><td>メタルカチューシャ</td></tr>
+      <tr><td>ribbon-trimmed_hairband</td><td>リボン付きカチューシャ</td></tr>
+</table>
   </div>
 </section>
 
@@ -445,9 +540,6 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
       <tr><td>low_ponytail</td><td>低いポニーテール（後ろで低く結ぶ）</td></tr>
       <tr><td>high_ponytail</td><td>高いニーテール</td></tr>
       <tr><td>folded_ponytail</td><td>折りたたみポニーテール</td></tr>
-      <tr><td>back_bun</td><td>後ろお団子</td></tr>
-      <tr><td>side_bun</td><td>横お団子</td></tr>
-      <tr><td>double_bun</td><td>ダブルお団子</td></tr>
       <tr><td>red_ribbon</td><td>赤リボン</td></tr>
       <tr><td>blue_ribbon</td><td>青リボン</td></tr>
       <tr><td>pink_ribbon</td><td>ピンクリボン</td></tr>
@@ -524,8 +616,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
       <tr><td>soft_expression</td><td>柔らかい表情</td></tr>
       <tr><td>looking_at_viewer</td><td>視線が鑑賞者を向いている</td></tr>
       <tr><td>head_tilt</td><td>首をかしげるポーズ</td></tr>
-      <tr><td>freckles</td><td>そばかす（無邪気な可愛さ）</td></tr>
-      <tr><td>pale_skin</td><td>白い肌（透明感）</td></tr>
+            <tr><td>pale_skin</td><td>白い肌（透明感）</td></tr>
       <tr><td>fair_skin</td><td>色白の肌</td></tr>
       <tr><td>glowing_skin</td><td>ツヤのある肌</td></tr>
       <tr><td>fangs</td><td>小さい八重歯</td></tr>
@@ -664,10 +755,10 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
       <tr><td>biting_breasts</td><td>胸を噛まれている</td></tr>
       <tr><td>fondling_breasts</td><td>胸を揉まれている（優しく）</td></tr>
       <tr><td>massaging_breasts</td><td>胸をマッサージしている</td></tr>
-      <tr><td>pinching_breasts</td><td>胸をつねっている</td></tr>
-      <tr><td>slapping_breasts</td><td>胸を叩いている</td></tr>
+            <tr><td>slapping_breasts</td><td>胸を叩いている</td></tr>
       <tr><td>breast_sucking</td><td>胸を吸っている</td></tr>
-    </table>
+          <tr><td>pinching_breasts</td><td>胸をつねっている</td></tr>
+</table>
   </div>
 </section>
 
@@ -746,7 +837,48 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
       <tr><td>untied_bikini_top</td><td>ビキニトップの紐が解けた</td></tr>
       <tr><td>bikini_top_only</td><td>ビキニトップのみ</td></tr>
       <tr><td>front-tie_bikini_top</td><td>前で結ぶビキニトップ</td></tr>
-    </table>
+          <tr><td>frilled_bikini</td><td>フリルビキニ</td></tr>
+      <tr><td>side-tie_bikini_bottom</td><td>横紐ビキニボトム</td></tr>
+      <tr><td>highleg_bikini</td><td>ハイレグビキニ</td></tr>
+      <tr><td>slingshot_swimsuit</td><td>スリングショット水着</td></tr>
+      <tr><td>o-ring_bikini</td><td>リング付きビキニ</td></tr>
+      <tr><td>latex_swimsuit</td><td>ラテックス水着</td></tr>
+      <tr><td>see-through_swimsuit</td><td>シースルー水着</td></tr>
+      <tr><td>wet_swimsuit</td><td>濡れた水着</td></tr>
+      <tr><td>swimsuit_under_clothes</td><td>服の下に水着</td></tr>
+      <tr><td>bikini_under_clothes</td><td>服の下にビキニ</td></tr>
+      <tr><td>swimsuit_skirt</td><td>水着にスカート</td></tr>
+      <tr><td>sarong</td><td>サロング（水着の上に巻く布）</td></tr>
+      <tr><td>beach_volleyball_uniform</td><td>ビーチバレー用スポーツビキニ</td></tr>
+      <tr><td>swimsuit_costume</td><td>水着コスチューム</td></tr>
+      <tr><td>animal_print_bikini</td><td>アニマル柄ビキニ</td></tr>
+      <tr><td>polka_dot_swimsuit</td><td>水玉水着</td></tr>
+      <tr><td>striped_swimsuit</td><td>ストライプ水着</td></tr>
+      <tr><td>floral_swimsuit</td><td>花柄水着</td></tr>
+      <tr><td>white_bikini</td><td>白いビキニ</td></tr>
+      <tr><td>black_bikini</td><td>黒いビキニ</td></tr>
+      <tr><td>red_bikini</td><td>赤いビキニ</td></tr>
+      <tr><td>blue_swimsuit</td><td>青い水着</td></tr>
+      <tr><td>swimsuit_tan</td><td>水着跡の日焼け</td></tr>
+      <tr><td>bikini_tan</td><td>ビキニ跡の日焼け</td></tr>
+      <tr><td>swimsuit_aside</td><td>水着をずらす</td></tr>
+      <tr><td>bikini_aside</td><td>ビキニをずらす</td></tr>
+      <tr><td>swimsuit_around_one_leg</td><td>水着が片足に絡まる</td></tr>
+      <tr><td>swimsuit_in_mouth</td><td>水着を口にくわえる</td></tr>
+      <tr><td>swimsuit_pull_aside</td><td>水着を横にずらす</td></tr>
+      <tr><td>bikini_under_breasts</td><td>ビキニが胸下にずれている</td></tr>
+      <tr><td>bikini_bridge</td><td>ビキニと体の間に隙間</td></tr>
+      <tr><td>swimsuit_between_buttocks</td><td>水着が尻の間に食い込む</td></tr>
+      <tr><td>swimsuit_costume_play</td><td>水着コスプレ</td></tr>
+      <tr><td>swimsuit_model</td><td>水着モデル風</td></tr>
+      <tr><td>beach</td><td>ビーチ</td></tr>
+      <tr><td>pool</td><td>プール</td></tr>
+      <tr><td>locker_room</td><td>更衣室</td></tr>
+      <tr><td>swimsuit_shower</td><td>水着でシャワー</td></tr>
+      <tr><td>swimsuit_oil</td><td>水着にオイル</td></tr>
+      <tr><td>swimsuit_wet_hair</td><td>濡れ髪＋水着</td></tr>
+      <tr><td>swimsuit_sunlight</td><td>水着に夕日・逆光</td></tr>
+</table>
   </div>
 </section>
 
@@ -925,8 +1057,6 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
       <tr><td>contraceptive</td><td>避妊具（一般）</td></tr>
       <tr><td>birth_control</td><td>避妊</td></tr>
       <tr><td>pill</td><td>ピル</td></tr>
-      <tr><td>impregnation</td><td>妊娠・孕ませ</td></tr>
-      <tr><td>pregnant</td><td>妊娠している</td></tr>
     </table>
   </div>
 </section>
@@ -984,8 +1114,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
       <tr><td>frog_tie</td><td>蛙 tie（脚を折り曲げて縛る）</td></tr>
       <tr><td>crotch_rope</td><td>股縄</td></tr>
       <tr><td>breast_bondage</td><td>胸縛り</td></tr>
-      <tr><td>rope_marks</td><td>縄跡</td></tr>
-      <tr><td>chain</td><td>鎖で拘束</td></tr>
+            <tr><td>chain</td><td>鎖で拘束</td></tr>
       <tr><td>handcuffs</td><td>手錠</td></tr>
       <tr><td>legcuffs</td><td>足枷</td></tr>
       <tr><td>spreader_bar</td><td>脚を開く拘束具</td></tr>
@@ -1204,9 +1333,6 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
       <tr><td>doll_joints</td><td>人形の関節</td></tr>
       <tr><td>oni</td><td>鬼娘</td></tr>
       <tr><td>insemination</td><td>受精・種付け</td></tr>
-      <tr><td>breeding</td><td>繁殖・孕ませ</td></tr>
-      <tr><td>pregnant_sex</td><td>妊娠中の性行為</td></tr>
-      <tr><td>pregnant_insertion</td><td>妊娠中の挿入</td></tr>
 <tr><td>aphrodisiac</td><td>媚薬</td></tr>
       <tr><td>love_potion</td><td>恋の薬</td></tr>
       <tr><td>pheromone</td><td>フェロモン</td></tr>
@@ -1228,7 +1354,6 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
       <tr><td>paddling</td><td>板で叩く</td></tr>
       <tr><td>face_slap</td><td>顔を叩く</td></tr>
       <tr><td>asphyxiation</td><td>窒息</td></tr>
-      <tr><td>erotic_asphyxiation</td><td>性的窒息プレイ</td></tr>
       <tr><td>rough_sex</td><td>荒い性行為</td></tr>
       <tr><td>passionate_sex</td><td>激しい情熱的な性行</td></tr>
       <tr><td>gentle_sex</td><td>優しい性行為</td></tr>
