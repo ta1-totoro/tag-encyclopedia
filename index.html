@@ -1511,9 +1511,27 @@ function toggleTag(tag, element) {
   updateInput();
 }
 
+const TAG_INPUT_PLACEHOLDER = 'テーブルの「タグ」列をタップするとここに追加されます。もう一度タップで解除。';
+
 function updateInput() {
   selectedTags.sort((a, b) => tagOrder.indexOf(a) - tagOrder.indexOf(b));
-  document.getElementById('tagInput').value = selectedTags.join(', ');
+
+  const input = document.getElementById('tagInput');
+  input.value = selectedTags.join(', ');
+
+  // iOS Safari対策：
+  // textareaを空にした直後、placeholderの折り返し表示が更新されないことがあるため、
+  // placeholderを一度外して次の描画フレームで戻し、表示を再描画させる。
+  if (!input.value) {
+    input.placeholder = '';
+    input.scrollTop = 0;
+    input.scrollLeft = 0;
+
+    requestAnimationFrame(() => {
+      input.placeholder = TAG_INPUT_PLACEHOLDER;
+      void input.offsetHeight;
+    });
+  }
 }
 
 function copyTags() {
