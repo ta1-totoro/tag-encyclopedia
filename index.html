@@ -229,7 +229,7 @@ table tr:hover td { background: rgba(255,255,255,0.03); }
 .btn-copy { background: #e87ea6; color: white; }
 .btn-clear { background: rgba(255,255,255,0.08); color: #f0e6f5; }
 .btn-copy:active, .btn-clear:active { opacity: 0.7; }
-#tagInput { width: 100%; min-height: 100px; padding: 0.75em; border: 1.5px solid rgba(255,255,255,0.08); border-radius: 10px; font-family: "Noto Sans JP", sans-serif; font-size: 0.9rem; line-height: 1.6; resize: vertical; background: #1a1625; color: #f0e6f5; }
+#tagInput { width: 100%; min-height: 120px; padding: 0.75em; border: 1.5px solid rgba(255,255,255,0.08); border-radius: 10px; font-family: "Noto Sans JP", sans-serif; font-size: 0.9rem; line-height: 1.6; resize: vertical; background: #1a1625; color: #f0e6f5; }
 .input-hint { margin-top: 0.5em; font-size: 0.8rem; color: #a090b0; }
 table td:first-child { cursor: pointer; transition: background 0.15s, color 0.15s; border-radius: 6px; user-select: none; -webkit-user-select: none; touch-action: manipulation; }
 table td:first-child:hover { background: #e87ea6; color: white; }
@@ -257,7 +257,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
       <button class="btn-clear" onclick="clearTags()">クリア</button>
     </div>
   </div>
-  <textarea id="tagInput" placeholder="タグをタップして追加・解除" readonly></textarea>
+  <textarea id="tagInput" placeholder="テーブルの「タグ」列をタップするとここに追加されます。もう一度タップで解除。" readonly></textarea>
   <div class="input-hint">カンマ区切りで出力されます</div>
 </div>
 
@@ -447,7 +447,6 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
       <tr><td>hair_bow</td><td>髪のリボン（大きめ）</td></tr>
       <tr><td>hair_ornament</td><td>髪飾り（一般）</td></tr>
       <tr><td>hairclip</td><td>ヘアクリップ</td></tr>
-      <tr><td>hair_bun</td><td>お団子ヘア</td></tr>
       <tr><td>ponytail</td><td>ポニーテール</td></tr>
       <tr><td>twintails</td><td>ツインテール</td></tr>
       <tr><td>side_ponytail</td><td>サイドポニーテール</td></tr>
@@ -723,7 +722,6 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
       <tr><td>breast_mousepad</td><td>胸の形のマウスパッド</td></tr>
       <tr><td>breast_pillow</td><td>胸の形の枕</td></tr>
       <tr><td>breast_expansion</td><td>胸が大きくなっていく描写</td></tr>
-      <tr><td>shrinking_breasts</td><td>胸が小さくなっていく描写</td></tr>
     </table>
   </div>
 </section>
@@ -781,8 +779,6 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>mole_on_breast</td><td>胸にほくろがある</td></tr>
-      <tr><td>breast_tattoo</td><td>胸にタトゥー</td></tr>
-      <tr><td>veiny_breasts</td><td>胸に血管が浮いている</td></tr>
       <tr><td>oiled</td><td>オイルを塗っている</td></tr>
       <tr><td>shiny_skin</td><td>肌にツヤがある</td></tr>
       <tr><td>sweat</td><td>汗をかいている</td></tr>
@@ -1049,8 +1045,6 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
       <tr><td>cum_outside</td><td>出し</td></tr>
       <tr><td>cum_on_body</td><td>体に精液をかける</td></tr>
       <tr><td>cum_on_breasts</td><td>胸に精液をかける</td></tr>
-      <tr><td>cum_on_face</td><td>顔射・ぶっかけ</td></tr>
-      <tr><td>facial</td><td>顔射</td></tr>
       <tr><td>bukkake</td><td>複数人からのぶっかけ</td></tr>
       <tr><td>creampie</td><td>中出し（膣内射精）</td></tr>
       <tr><td>overflow</td><td>精液が溢れ出る</td></tr>
