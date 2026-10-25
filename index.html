@@ -207,9 +207,36 @@ td:last-child {
 @page { size: A4; margin: 14mm; }
 
 
+
+/* 組み合わせプロンプト例：カテゴリ列を抑え、タグ列を広く確保 */
+.combo-table {
+  width: 100%;
+  table-layout: fixed;
+}
+.combo-table .combo-category-col { width: 38%; }
+.combo-table .combo-tags-col { width: 62%; }
+.combo-table th,
+.combo-table td {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+.combo-table td:first-child {
+  width: auto;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+.combo-table td:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 /* ===== ダークモード ===== */
 body { background: #1a1625; color: #f0e6f5; }
 .note { background: rgba(232,126,166,0.12); }
+.note strong { color: #c5adbf; } /* 小見出し：暗い背景でも落ち着いた明るさで読みやすく */
 .table-wrap { background: #242033; box-shadow: 0 2px 8px rgba(0,0,0,0.25), 0 8px 24px -6px rgba(0,0,0,0.35); }
 table th { background: rgba(255,255,255,0.06) !important; color: #a090b0 !important; border-bottom-color: rgba(255,255,255,0.08) !important; }
 table td { border-bottom-color: rgba(255,255,255,0.08) !important; color: #f0e6f5; }
@@ -239,6 +266,30 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
 .btn-copy-inline { margin-top: 0.75em; padding: 0.5em 1.2em; border: none; border-radius: 8px; background: #e87ea6; color: white; font-family: "Noto Sans JP", sans-serif; font-size: 0.85rem; cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 .btn-copy-inline:active { opacity: 0.8; }
 
+
+/* 胸へのアクション表：タグ列と意味列の幅を均等にし、長いタグは折り返す */
+.section.view-action table { table-layout: fixed; }
+.section.view-action th:first-child,
+.section.view-action td:first-child {
+  width: 50%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+.section.view-action th:last-child,
+.section.view-action td:last-child { width: 50%; }
+
+/* 長いタグが説明列を圧迫している表だけ、列幅と折り返しを調整 */
+.section.table-balanced table { table-layout: fixed; }
+.section.table-balanced th:first-child,
+.section.table-balanced td:first-child {
+  width: 42%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+.section.table-balanced th:last-child,
+.section.table-balanced td:last-child { width: 58%; }
 </style>
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#1a1625">
@@ -297,7 +348,119 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
   </div>
 </section>
 
-<section class="section view">
+<section class="section view view-action">
+  <h2 class="section-title view">視聴者視点・胸へのアクション</h2>
+  <div class="table-wrap">
+    <table>
+      <tr><th>タグ</th><th>意味</th></tr>
+      <tr><td>pov, pov_hands, breast_grab</td><td>視聴者視点で、画面手前の手が胸を掴む</td></tr>
+      <tr><td>pov, pov_hands, breast_squeeze</td><td>視聴者視点で、手で胸をぎゅっと押す</td></tr>
+      <tr><td>pov, pov_hands, groping</td><td>視聴者視点で、手で胸に触れる・揉む</td></tr>
+      <tr><td>pov, pov_hands, breast_poke</td><td>視聴者視点で、指先で胸をつつく</td></tr>
+      <tr><td>pov, pov_hands, breast_hold</td><td>視聴者視点で、手で胸を支える・持ち上げる</td></tr>
+      <tr><td>pov, pov_hands, hand_between_breasts</td><td>視聴者視点で、胸の間に手を差し入れる</td></tr>
+      <tr><td>pov, pov_breasts, looking_at_viewer</td><td>胸が手前に大きく見え、キャラクターが視聴者を見る</td></tr>
+    </table>
+  </div>
+
+  <div class="note"><strong>POV視点の基本タグ</strong></div>
+  <div class="table-wrap">
+    <table>
+      <tr><th>タグ</th><th>効果</th></tr>
+      <tr><td>first_person_view</td><td>povと同義。モデルによってはこちらが安定</td></tr>
+      <tr><td>first_person_perspective</td><td>主観視点をより強調</td></tr>
+      <tr><td>disembodied_hand</td><td>画面に手だけが入る＝視聴者の手（触る動作で使用）</td></tr>
+      <tr><td>pov_hands</td><td>POV視点の手を強調</td></tr>
+      <tr><td>looking_at_viewer</td><td>キャラクターがこちらを見つめる</td></tr>
+      <tr><td>breast_focus</td><td>胸が構図の中心になる</td></tr>
+      <tr><td>from_above</td><td>上から覆い被さる角度</td></tr>
+      <tr><td>from_below</td><td>下から見上げる角度</td></tr>
+    </table>
+  </div>
+
+  <div class="note"><strong>胸のアクション：構図・強調系</strong></div>
+  <div class="table-wrap">
+    <table>
+      <tr><th>タグ</th><th>効果</th></tr>
+      <tr><td>leaning_forward</td><td>前かがみで胸が視聴者側に迫る</td></tr>
+      <tr><td>breast_press</td><td>胸を前に押し出すポーズ</td></tr>
+      <tr><td>breasts_squeezed_together</td><td>胸を寄せて谷間を強調</td></tr>
+      <tr><td>cleavage</td><td>谷間が見える状態</td></tr>
+      <tr><td>cowboy_shot</td><td>膝上から胸元にかけての構図</td></tr>
+      <tr><td>shirt_lift</td><td>衣服をめくって見せる動作</td></tr>
+      <tr><td>clothes_lift</td><td>衣服を持ち上げる動作</td></tr>
+      <tr><td>unbuttoned_shirt</td><td>シャツのボタンを外している</td></tr>
+    </table>
+  </div>
+
+  <div class="note"><strong>自分の胸に触れる動作</strong></div>
+  <div class="table-wrap">
+    <table>
+      <tr><th>タグ</th><th>効果</th></tr>
+      <tr><td>hand_on_own_chest</td><td>胸に手を当てる（マイルド）</td></tr>
+      <tr><td>breast_hold</td><td>胸を両手で優しく支える</td></tr>
+      <tr><td>grabbing_own_breast</td><td>自分の胸を掴む・持ち上げる</td></tr>
+      <tr><td>lifting_own_breasts</td><td>胸を両手で持ち上げてアピール</td></tr>
+      <tr><td>between_breasts</td><td>胸の間に手や物を挟む</td></tr>
+    </table>
+  </div>
+
+  <div class="note"><strong>視聴者の手で触る動作（POV）</strong></div>
+  <div class="table-wrap">
+    <table>
+      <tr><th>タグ</th><th>効果</th></tr>
+      <tr><td>breast_grab</td><td>胸を鷲掴みにする</td></tr>
+      <tr><td>groping</td><td>揉む・触り回す</td></tr>
+      <tr><td>fondling</td><td>優しく撫で回す・弄ぶ</td></tr>
+      <tr><td>breast_squeeze</td><td>胸を押し潰すように揉む</td></tr>
+      <tr><td>clothes_grab</td><td>衣服越しに掴む</td></tr>
+      <tr><td>under_clothes</td><td>衣服の下に手を入れる</td></tr>
+      <tr><td>under_shirt</td><td>シャツの下に手を入れる</td></tr>
+      <tr><td>reaching_out</td><td>手がキャラクターに伸びる構図</td></tr>
+    </table>
+  </div>
+
+  <div class="note"><strong>乳首のアクション</strong></div>
+  <div class="table-wrap">
+    <table>
+      <tr><th>タグ</th><th>効果</th></tr>
+      <tr><td>nipples</td><td>乳首が露出・見えている状態（前提）</td></tr>
+      <tr><td>nipple_tweak</td><td>乳首をつまむ・ひねる</td></tr>
+      <tr><td>nipple_pull</td><td>乳首を引っ張る</td></tr>
+      <tr><td>nipple_pinch</td><td>乳首を強くつまむ</td></tr>
+      <tr><td>nipple_rub</td><td>乳首を擦る・指で転がす</td></tr>
+      <tr><td>fingering_nipples</td><td>指で乳首を弄る</td></tr>
+      <tr><td>nipple_stimulation</td><td>乳首への刺激全般（抽象的だが安定）</td></tr>
+      <tr><td>puffy_nipples</td><td>ぷっくりした乳首の状態</td></tr>
+      <tr><td>perky_nipples</td><td>硬く尖った乳首の状態</td></tr>
+      <tr><td>areolae</td><td>乳輪（必要に応じて）</td></tr>
+    </table>
+  </div>
+
+  <div class="note"><strong>反応・演出タグ</strong></div>
+  <div class="table-wrap">
+    <table>
+      <tr><th>タグ</th><th>効果</th></tr>
+      <tr><td>blush</td><td>赤面している</td></tr>
+      <tr><td>embarrassed</td><td>恥ずかしがっている</td></tr>
+      <tr><td>open_mouth</td><td>口を開けて驚いている・感じている</td></tr>
+      <tr><td>trembling</td><td>感じて震えている</td></tr>
+      <tr><td>wince</td><td>痛みで顔を歪める</td></tr>
+      <tr><td>smile</td><td>微笑みながら受け入れている</td></tr>
+      <tr><td>arms_up</td><td>抵抗せず手を上げている</td></tr>
+      <tr><td>hands_up</td><td>同上</td></tr>
+      <tr><td>looking_back</td><td>後ろを振り向く（後ろから触る場合）</td></tr>
+      <tr><td>sweat</td><td>汗でテカリを強調</td></tr>
+      <tr><td>shiny_skin</td><td>肌の質感・テカリ</td></tr>
+      <tr><td>depth_of_field</td><td>手と胸に奥行きを出す</td></tr>
+      <tr><td>foreshortening</td><td>迫力ある遠近感</td></tr>
+    </table>
+  </div>
+
+
+</section>
+
+<section class="section view table-balanced">
   <h2 class="section-title view">視聴者視点・構図タグ</h2>
   <div class="table-wrap">
     <table>
@@ -312,7 +475,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
       <tr><td>cowboy_shot</td><td>膝から上の構図</td></tr>
       <tr><td>upper_body</td><td>上半身の構図</td></tr>
       <tr><td>full_body</td><td>全身が映る構図</td></tr>
-      <tr><td>close-up</td><td>接写・アップ</td></tr>
+      <tr><td>close_up</td><td>接写・アップ</td></tr>
       <tr><td>dutch_angle</td><td>ダッチアングル（傾いた構図）</td></tr>
       <tr><td>overhead</td><td>真上からの俯瞰</td></tr>
       <tr><td>worm's_eye_view</td><td>極端な下からの視点</td></tr>
@@ -349,10 +512,10 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
       <tr><td>pov_crotch</td><td>股間視点</td></tr>
       <tr><td>pov_foot</td><td>足視点</td></tr>
       <tr><td>pov_face</td><td>顔視点</td></tr>
-      <tr><td>front-facing</td><td>真正面を向く</td></tr>
-      <tr><td>straight-on</td><td>真正面からの構図</td></tr>
+      <tr><td>front_facing</td><td>真正面を向く</td></tr>
+      <tr><td>straight_on</td><td>真正面からの構図</td></tr>
       <tr><td>symmetrical_pose</td><td>左右対称のポーズ（正面感強調）</td></tr>
-      <tr><td>head-on</td><td>真正面を向いた頭部</td></tr>
+      <tr><td>head_on</td><td>真正面を向いた頭部</td></tr>
       <tr><td>direct_gaze</td><td>真正面からの視線</td></tr>
       <tr><td>centered</td><td>画面中央に配置</td></tr>
       <tr><td>square_to_camera</td><td>カメラに対して真正面</td></tr>
@@ -367,7 +530,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
   </div>
 </section>
 
-<section class="section eyes">
+<section class="section eyes table-balanced">
   <h2 class="section-title eyes">目のタグ</h2>
   <div class="table-wrap">
     <table>
@@ -410,7 +573,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
   </div>
 </section>
 
-<section class="section hair">
+<section class="section hair table-balanced">
   <h2 class="section-title hair">髪の長さ・スタイルタグ</h2>
   <div class="table-wrap">
     <table>
@@ -497,7 +660,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
   </div>
 </section>
 
-<section class="section hair">
+<section class="section hair table-balanced">
   <h2 class="section-title hair">髪のリボン・飾りタグ</h2>
   <div class="table-wrap">
     <table>
@@ -575,7 +738,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
   </div>
 </section>
 
-<section class="section haircolor">
+<section class="section haircolor table-balanced">
   <h2 class="section-title haircolor">髪の色タグ</h2>
   <div class="table-wrap">
     <table>
@@ -669,7 +832,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
   </div>
 </section>
 
-<section class="section breast">
+<section class="section breast table-balanced">
   <h2 class="section-title breast">胸の露出・状態</h2>
   <div class="table-wrap">
     <table>
@@ -726,7 +889,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
   </div>
 </section>
 
-<section class="section breast">
+<section class="section breast table-balanced">
   <h2 class="section-title breast">乳首・乳輪</h2>
   <div class="table-wrap">
     <table>
@@ -773,7 +936,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
   </div>
 </section>
 
-<section class="section breast">
+<section class="section breast table-balanced">
   <h2 class="section-title breast">胸の痕・演出</h2>
   <div class="table-wrap">
     <table>
@@ -801,7 +964,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
   </div>
 </section>
 
-<section class="section clothes">
+<section class="section clothes table-balanced">
   <h2 class="section-title clothes">胸と衣装（ブラ・下着）</h2>
   <div class="table-wrap">
     <table>
@@ -829,7 +992,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
   </div>
 </section>
 
-<section class="section clothes">
+<section class="section clothes table-balanced">
   <h2 class="section-title clothes">胸と衣装（水着）</h2>
   <div class="table-wrap">
     <table>
@@ -891,7 +1054,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
   </div>
 </section>
 
-<section class="section clothes">
+<section class="section clothes table-balanced">
   <h2 class="section-title clothes">胸と衣装（トップス・一般服）</h2>
   <div class="table-wrap">
     <table>
@@ -962,7 +1125,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
   </div>
 </section>
 
-<section class="section clothes">
+<section class="section clothes table-balanced">
   <h2 class="section-title clothes">胸と衣装（裸・部分裸・巻き物）</h2>
   <div class="table-wrap">
     <table>
@@ -990,7 +1153,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
   </div>
 </section>
 
-<section class="section clothes">
+<section class="section clothes table-balanced">
   <h2 class="section-title clothes">胸と衣装（センサー・隠蔽）</h2>
   <div class="table-wrap">
     <table>
@@ -1012,7 +1175,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
   </div>
 </section>
 
-<section class="section sexual">
+<section class="section sexual table-balanced">
   <h2 class="section-title sexual">性関連タグ（一般・行為）</h2>
   <div class="table-wrap">
     <table>
@@ -1067,7 +1230,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
   </div>
 </section>
 
-<section class="section sexual">
+<section class="section sexual table-balanced">
   <h2 class="section-title sexual">性関連タグ（体位・姿勢）</h2>
   <div class="table-wrap">
     <table>
@@ -1105,7 +1268,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
   </div>
 </section>
 
-<section class="section sexual">
+<section class="section sexual table-balanced">
   <h2 class="section-title sexual">性関連タグ（軽度拘束・プレイ）</h2>
   <div class="table-wrap">
     <table>
@@ -1153,7 +1316,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
   </div>
 </section>
 
-<section class="section sexual">
+<section class="section sexual table-balanced">
   <h2 class="section-title sexual">性関連タグ（愛撫・接触）</h2>
   <div class="table-wrap">
     <table>
@@ -1209,7 +1372,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
   </div>
 </section>
 
-<section class="section sexual">
+<section class="section sexual table-balanced">
   <h2 class="section-title sexual">性関連タグ（フェチ・マイルド）</h2>
   <div class="table-wrap">
     <table>
@@ -1346,7 +1509,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
   </div>
 </section>
 
-<section class="section sexual">
+<section class="section sexual table-balanced">
   <h2 class="section-title sexual">性関連タグ（女男女・2女1男）</h2>
   <div class="table-wrap">
     <table>
@@ -1467,6 +1630,25 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
       <tr class="negative-row"><td>光・エフェクト</td><td>star-shaped_pupils, heart-shaped_pupils, cross-shaped_pupils, sparkle, lens_flare, glowing_eyes, glowing_pupils, light_particles, excessive_highlights</td></tr>
       <tr class="negative-row"><td>背景・フォーカス</td><td>photo_background, realistic_background, depth_of_field, bokeh, soft_focus</td></tr>
       <tr class="negative-row"><td>塗り・画風競合</td><td>soft_shading, airbrush, grainy, noise, monochrome, greyscale, muted_colors, pastel_colors</td></tr>
+    </table>
+  </div>
+
+</section>
+
+<section class="section negative">
+  <h2 class="section-title negative">組み合わせプロンプト例</h2>
+  <div class="table-wrap combo-table-wrap">
+    <table class="combo-table">
+      <colgroup><col class="combo-category-col"><col class="combo-tags-col"></colgroup>
+      <tr class="negative-row"><th>カテゴリ</th><th>タグ</th></tr>
+      <tr class="negative-row"><td>例1：胸を揉む（衣服あり・基本）</td><td>pov, disembodied_hand, breast_grab, groping, breast_squeeze, breast_focus, close_up, looking_at_viewer, blush, embarrassed, open_mouth, shirt, from_above</td></tr>
+      <tr class="negative-row"><td>例2：衣服の下に手を入れて胸を触る</td><td>pov, disembodied_hand, under_clothes, under_shirt, breast_grab, groping, breast_focus, close_up, blush, looking_at_viewer, clothes_lift, reaching_out</td></tr>
+      <tr class="negative-row"><td>例3：乳首をつまむ（露出）</td><td>pov, disembodied_hand, nipple_tweak, nipples, breast_focus, close_up, looking_at_viewer, blush, open_mouth, embarrassed</td></tr>
+      <tr class="negative-row"><td>例4：乳首を引っ張る</td><td>pov, disembodied_hand, nipple_pull, nipples, breast_focus, close_up, looking_at_viewer, blush, wince, trembling</td></tr>
+      <tr class="negative-row"><td>例5：指で乳首を擦る・転がす</td><td>pov, disembodied_hand, nipple_rub, fingering_nipples, nipples, breast_focus, close_up, blush, looking_at_viewer</td></tr>
+      <tr class="negative-row"><td>例6：後ろから回して胸を触る</td><td>pov, disembodied_hand, breast_grab, groping, from_behind, hug_from_behind, breast_focus, close_up, blush, surprised, open_mouth, looking_back</td></tr>
+      <tr class="negative-row"><td>例7：前かがみで胸元を見せる（非接触）</td><td>pov, looking_at_viewer, leaning_forward, breast_focus, cleavage, close_up, cowboy_shot, hand_on_own_chest, blush, smile</td></tr>
+      <tr class="negative-row"><td>例8：自分の胸を持ち上げてアピール</td><td>first_person_perspective, looking_at_viewer, grabbing_own_breast, lifting_own_breasts, breast_focus, large_breasts, close_up, from_above</td></tr>
     </table>
   </div>
 </section>
