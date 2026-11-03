@@ -97,7 +97,6 @@ main { max-width: 800px; margin: 0 auto; }
 .section-title.body { color: var(--c8); border-color: var(--c8); }
 .section-title.sexual { color: #c97f7f; border-color: #c97f7f; }
 .section-title.clothes { color: #7f9dc9; border-color: #7f9dc9; }
-.section.view { border-color: var(--c8); }
 .section-title.view { color: var(--c8); border-color: var(--c8); }
 
 .table-wrap {
@@ -145,13 +144,13 @@ tr + tr td {
 td:first-child {
   font-family: "M PLUS Rounded 1c", "Noto Sans JP", sans-serif;
   font-weight: 500;
-  white-space: nowrap;
-  width: 38%;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
   user-select: none;
   -webkit-user-select: none;
+  transition: background 0.15s, color 0.15s;
+  border-radius: 6px;
 }
 
 td:last-child {
@@ -208,31 +207,6 @@ td:last-child {
 
 
 
-/* 組み合わせプロンプト例：カテゴリ列を抑え、タグ列を広く確保 */
-.combo-table {
-  width: 100%;
-  table-layout: fixed;
-}
-.combo-table .combo-category-col { width: 38%; }
-.combo-table .combo-tags-col { width: 62%; }
-.combo-table th,
-.combo-table td {
-  white-space: normal;
-  overflow-wrap: anywhere;
-  word-break: normal;
-}
-.combo-table td:first-child {
-  width: auto;
-  white-space: normal;
-  overflow-wrap: break-word;
-  word-break: normal;
-}
-.combo-table td:last-child {
-  min-width: 0;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
-
 /* ===== ダークモード ===== */
 body { background: #1a1625; color: #f0e6f5; }
 .note { background: rgba(232,126,166,0.12); }
@@ -258,7 +232,6 @@ table tr:hover td { background: rgba(255,255,255,0.03); }
 .btn-copy:active, .btn-clear:active { opacity: 0.7; }
 #tagInput { width: 100%; min-height: 120px; padding: 0.75em; border: 1.5px solid rgba(255,255,255,0.08); border-radius: 10px; font-family: "Noto Sans JP", sans-serif; font-size: 0.9rem; line-height: 1.6; resize: vertical; background: #1a1625; color: #f0e6f5; }
 .input-hint { margin-top: 0.5em; font-size: 0.8rem; color: #a090b0; }
-table td:first-child { cursor: pointer; transition: background 0.15s, color 0.15s; border-radius: 6px; user-select: none; -webkit-user-select: none; touch-action: manipulation; }
 table td:first-child:hover { background: #e87ea6; color: white; }
 table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
 .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(100px); background: #f0e6f5; color: #1a1625; padding: 0.75em 1.5em; border-radius: 10px; font-size: 0.9rem; opacity: 0; transition: transform 0.3s, opacity 0.3s; z-index: 200; pointer-events: none; }
@@ -267,29 +240,95 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
 .btn-copy-inline:active { opacity: 0.8; }
 
 
-/* 胸へのアクション表：タグ列と意味列の幅を均等にし、長いタグは折り返す */
-.section.view-action table { table-layout: fixed; }
+/* ===== タグ列／意味列のバランス統一 =====
+   列幅の指定はこのブロックだけに集約する（旧来の表ごとの指定は整理済み）。
+   通常の表はすべて同じ比率にそろえ、長いタグは単語の途中ではなく
+   「_」の後ろで優先して折り返す（下のスクリプトで <wbr> を挿入）。
+   列いっぱいでも収まらない単語だけ、最後の手段として途中で折る。 */
+.table-wrap table {
+  table-layout: fixed;
+  width: 100%;
+}
+.table-wrap th:first-child,
+.table-wrap td:first-child,
+.section.table-balanced th:first-child,
+.section.table-balanced td:first-child,
 .section.view-action th:first-child,
 .section.view-action td:first-child {
-  width: 50%;
+  width: 44%;
   white-space: normal;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
   word-break: normal;
 }
-.section.view-action th:last-child,
-.section.view-action td:last-child { width: 50%; }
-
-/* 長いタグが説明列を圧迫している表だけ、列幅と折り返しを調整 */
-.section.table-balanced table { table-layout: fixed; }
-.section.table-balanced th:first-child,
-.section.table-balanced td:first-child {
-  width: 42%;
-  white-space: normal;
-  overflow-wrap: anywhere;
-  word-break: normal;
-}
+.table-wrap th:last-child,
+.table-wrap td:last-child,
 .section.table-balanced th:last-child,
-.section.table-balanced td:last-child { width: 58%; }
+.section.table-balanced td:last-child,
+.section.view-action th:last-child,
+.section.view-action td:last-child {
+  width: 56%;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+.table-wrap td:first-child { line-height: 1.55; }
+
+/* 複合タグ（pov, pov_hands, …）の表だけは、タグ側が長いので半々に近づける */
+.section.view-action table.pov-action-table th:first-child,
+.section.view-action table.pov-action-table td:first-child { width: 48%; }
+.section.view-action table.pov-action-table th:last-child,
+.section.view-action table.pov-action-table td:last-child { width: 52%; }
+
+/* ネガティブ表は「カテゴリ（短い日本語）／タグ一覧（長い英語）」なので逆配分。
+   ただしカテゴリが窮屈にならないよう、タグ側が広すぎない範囲で確保する */
+table.negative-table th:first-child,
+table.negative-table td:first-child { width: 30%; }
+table.negative-table th:last-child,
+table.negative-table td:last-child { width: 70%; }
+
+/* 組み合わせ例は「例の説明／タグ一覧」なので、タグ側を広く取る。
+   colgroupだけだと見出しセルの幅指定に負けるため、セル側も同じ比率で指定する */
+.combo-table .combo-category-col { width: 36%; }
+.combo-table .combo-tags-col { width: 64%; }
+.table-wrap table.combo-table th:first-child,
+.table-wrap table.combo-table td:first-child { width: 36%; }
+.table-wrap table.combo-table th:last-child,
+.table-wrap table.combo-table td:last-child { width: 64%; }
+.table-wrap table.combo-table td:last-child { word-break: break-word; }
+.combo-table td:first-child { line-height: 1.6; }
+
+/* スマホ幅：セルの左右余白を少し詰めて両列に実質幅を回し、
+   タグ列をわずかに広げて折り返しを減らす */
+@media (max-width: 560px) {
+  .table-wrap th,
+  .table-wrap td { padding: 0.6em 0.75em; }
+  .table-wrap th:first-child,
+  .table-wrap td:first-child,
+  .section.table-balanced th:first-child,
+  .section.table-balanced td:first-child,
+  .section.view-action th:first-child,
+  .section.view-action td:first-child { width: 46%; }
+  .table-wrap th:last-child,
+  .table-wrap td:last-child,
+  .section.table-balanced th:last-child,
+  .section.table-balanced td:last-child,
+  .section.view-action th:last-child,
+  .section.view-action td:last-child { width: 54%; }
+  .section.view-action table.pov-action-table th:first-child,
+  .section.view-action table.pov-action-table td:first-child { width: 50%; }
+  .section.view-action table.pov-action-table th:last-child,
+  .section.view-action table.pov-action-table td:last-child { width: 50%; }
+  /* スマホではカテゴリ名（最長8文字）が1行に収まる幅まで広げる */
+  table.negative-table th:first-child,
+  table.negative-table td:first-child { width: 38%; }
+  table.negative-table th:last-child,
+  table.negative-table td:last-child { width: 62%; }
+  .combo-table .combo-category-col { width: 40%; }
+  .combo-table .combo-tags-col { width: 60%; }
+  .table-wrap table.combo-table th:first-child,
+  .table-wrap table.combo-table td:first-child { width: 40%; }
+  .table-wrap table.combo-table th:last-child,
+  .table-wrap table.combo-table td:last-child { width: 60%; }
+}
 </style>
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#1a1625">
@@ -351,7 +390,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
 <section class="section view view-action">
   <h2 class="section-title view">視聴者視点・胸へのアクション</h2>
   <div class="table-wrap">
-    <table>
+    <table class="pov-action-table">
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>pov, pov_hands, breast_grab</td><td>視聴者視点で、画面手前の手が胸を掴む</td></tr>
       <tr><td>pov, pov_hands, breast_squeeze</td><td>視聴者視点で、手で胸をぎゅっと押す</td></tr>
@@ -1620,7 +1659,7 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
 <section class="section negative">
   <h2 class="section-title negative">ネガティブプロンプト</h2>
   <div class="table-wrap">
-    <table>
+    <table class="negative-table">
       <tr class="negative-row"><th>カテゴリ</th><th>タグ</th></tr>
       <tr class="negative-row"><td>画質崩壊</td><td>lowres, bad anatomy, bad hands, text, english_text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry</td></tr>
       <tr class="negative-row"><td>線画問題</td><td>thick_lineart, thick_outlines, heavy_lineart, rough_lineart, dark_outlines, black_outlines</td></tr>
@@ -1664,6 +1703,18 @@ table td:first-child.selected { background: #6bbd8e; color: #1a1625; }
 </main>
 
 <script>
+// 長いタグは「_」の後ろで折り返せるようにする。
+// <wbr> は表示にも textContent（＝タップで追加されるタグ文字列）にも影響しない。
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('table td').forEach(function(cell) {
+    if (!cell.textContent.includes('_')) return;
+    cell.innerHTML = cell.textContent
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/_/g, '_<wbr>');
+  });
+});
+</script>
+<script>
 let selectedTags = [];
 let tagOrder = [];
 
@@ -1688,8 +1739,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function toggleTag(tag, element) {
   const index = selectedTags.indexOf(tag);
-  if (index === -1) { selectedTags.push(tag); element.classList.add('selected'); }
-  else { selectedTags.splice(index, 1); element.classList.remove('selected'); }
+  const selected = index === -1;
+  if (selected) { selectedTags.push(tag); }
+  else { selectedTags.splice(index, 1); }
+  // 同じタグが複数の表にある場合は、全部のセルの色を選択状態に合わせる
+  // （片方だけ色が付いて、見た目と実際の選択がズレるのを防ぐ）
+  document.querySelectorAll('table td:first-child').forEach(cell => {
+    if (cell.textContent.trim() === tag) cell.classList.toggle('selected', selected);
+  });
   updateInput();
 }
 
@@ -1716,13 +1773,27 @@ function updateInput() {
   }
 }
 
+// 予備のコピー手段：一時的なテキスト欄に移して選択してからコピーし、成否を返す
+function fallbackCopyText(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  let ok = false;
+  try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+  document.body.removeChild(ta);
+  return ok;
+}
+
 function copyTags() {
   const input = document.getElementById('tagInput');
   if (!input.value) { showToast('タグが選択されていません'); return; }
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(input.value).then(() => showToast('コピーしました！'))
-    .catch(() => { document.execCommand('copy'); showToast('コピーしました！'); });
-  } else { input.select(); document.execCommand('copy'); showToast('コピーしました！'); }
+    .catch(() => showToast(fallbackCopyText(input.value) ? 'コピーしました！' : 'コピーできませんでした'));
+  } else { showToast(fallbackCopyText(input.value) ? 'コピーしました！' : 'コピーできませんでした'); }
 }
 
 function clearTags() {
@@ -1735,11 +1806,9 @@ function copyNegativePrompt() {
   const text = document.getElementById('negativePromptText').textContent;
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(text).then(() => showToast('ネガティブプロンプトをコピーしました！'))
-    .catch(() => { document.execCommand('copy'); showToast('ネガティブプロンプトをコピーしました！'); });
+    .catch(() => showToast(fallbackCopyText(text) ? 'ネガティブプロンプトをコピーしました！' : 'コピーできませんでした'));
   } else {
-    const ta = document.createElement('textarea'); ta.value = text;
-    document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
-    showToast('ネガティブプロンプトをコピーしました！');
+    showToast(fallbackCopyText(text) ? 'ネガティブプロンプトをコピーしました！' : 'コピーできませんでした');
   }
 }
 
