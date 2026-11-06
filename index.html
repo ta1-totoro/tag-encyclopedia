@@ -373,7 +373,7 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>anime_coloring</td><td>アニメ調のセルルック塗り</td></tr>
       <tr><td>cel_shading</td><td>セルシェーディング（明暗2トーン）</td></tr>
       <tr><td>flat_color</td><td>平塗り。色の境目がはっきりした塗り</td></tr>
-      <tr><td>hard_shadows</td><td>影の境界をシャープに</td></tr>
+      <tr><td>shadow</td><td>影</td></tr>
       <tr><td>vivid_colors</td><td>鮮やかな色合い</td></tr>
       <tr><td>high_contrast</td><td>明暗のコントラストを強く</td></tr>
       <tr><td>limited_palette</td><td>使用色数を絞る</td></tr>
@@ -385,10 +385,8 @@ table.negative-table td:last-child { width: 70%; }
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>thin_lineart</td><td>細い線画</td></tr>
-      <tr><td>delicate_lineart</td><td>繊細な線画</td></tr>
       <tr><td>fine_lineart</td><td>細い線画</td></tr>
-      <tr><td>clean_lines</td><td>きれいな線（デジタル清書感）</td></tr>
-      <tr><td>crisp_lines</td><td>シャープな線（鮮明な線）</td></tr>
+      <tr><td>lineart</td><td>線画</td></tr>
     </table>
   </div>
   <div class="note"><strong>線画</strong></div>
@@ -398,12 +396,21 @@ table.negative-table td:last-child { width: 70%; }
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>2d</td><td>2次元イラスト</td></tr>
       <tr><td>anime_screenshot</td><td>TVアニメのスクリーンショット風</td></tr>
-      <tr><td>TV_anime</td><td>テレビ放送アニメの制作感</td></tr>
-      <tr><td>modern_anime</td><td>現代のデジタルアニメ作風</td></tr>
-      <tr><td>key_visual</td><td>アニメのキービジュアル風</td></tr>
+      <tr><td>anime screencap</td><td>アニメのスクリーンショット風</td></tr>
       <tr><td>kyoto_animation</td><td>京アニ風（柔らかい色・繊細な目）</td></tr>
       <tr><td>a-1_pictures</td><td>A-1 Pictures風（シャープで華やか）</td></tr>
       <tr><td>ufotable</td><td>ufotable風（コントラスト強・影が濃い）</td></tr>
+      <tr><td>trigger_(studio)</td><td>TRIGGER風</td></tr>
+      <tr><td>wit_studio</td><td>WIT STUDIO風</td></tr>
+      <tr><td>shaft_(studio)</td><td>シャフト風</td></tr>
+      <tr><td>production_i.g</td><td>Production I.G風</td></tr>
+      <tr><td>madhouse</td><td>マッドハウス風</td></tr>
+      <tr><td>mappa</td><td>MAPPA風</td></tr>
+      <tr><td>cloverworks</td><td>CloverWorks風</td></tr>
+      <tr><td>david_production</td><td>デイヴィッドプロダクション風（裏付けなし）</td></tr>
+      <tr><td>game_cg</td><td>ゲームCG風</td></tr>
+      <tr><td>visual_novel</td><td>ビジュアルノベル風</td></tr>
+      <tr><td>takeuchi_takashi_(style)</td><td>武内崇（型月）風</td></tr>
     </table>
   </div>
   <div class="note"><strong>アニメ画面・作品風</strong></div>
@@ -415,11 +422,10 @@ table.negative-table td:last-child { width: 70%; }
     <table class="pov-action-table">
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>pov, pov_hands, breast_grab</td><td>視聴者視点で、画面手前の手が胸を掴む</td></tr>
-      <tr><td>pov, pov_hands, breast_squeeze</td><td>視聴者視点で、手で胸をぎゅっと押す</td></tr>
       <tr><td>pov, pov_hands, groping</td><td>視聴者視点で、手で胸に触れる・揉む</td></tr>
       <tr><td>pov, pov_hands, breast_poke</td><td>視聴者視点で、指先で胸をつつく</td></tr>
       <tr><td>pov, pov_hands, breast_hold</td><td>視聴者視点で、手で胸を支える・持ち上げる</td></tr>
-      <tr><td>pov, pov_hands, hand_between_breasts</td><td>視聴者視点で、胸の間に手を差し入れる</td></tr>
+      <tr><td>pov, pov_hands, between_breasts</td><td>視聴者視点で、胸の間に手を差し入れる</td></tr>
       <tr><td>pov, pov_breasts, looking_at_viewer</td><td>胸が手前に大きく見え、キャラクターが視聴者を見る</td></tr>
     </table>
   </div>
@@ -461,7 +467,6 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>hand_on_own_chest</td><td>胸に手を当てる（マイルド）</td></tr>
       <tr><td>breast_hold</td><td>胸を両手で優しく支える</td></tr>
       <tr><td>grabbing_own_breast</td><td>自分の胸を掴む・持ち上げる</td></tr>
-      <tr><td>lifting_own_breasts</td><td>胸を両手で持ち上げてアピール</td></tr>
       <tr><td>between_breasts</td><td>胸の間に手や物を挟む</td></tr>
     </table>
   </div>
@@ -472,8 +477,6 @@ table.negative-table td:last-child { width: 70%; }
       <tr><th>タグ</th><th>効果</th></tr>
       <tr><td>breast_grab</td><td>胸を鷲掴みにする</td></tr>
       <tr><td>groping</td><td>揉む・触り回す</td></tr>
-      <tr><td>fondling</td><td>優しく撫で回す・弄ぶ</td></tr>
-      <tr><td>breast_squeeze</td><td>胸を押し潰すように揉む</td></tr>
       <tr><td>clothes_grab</td><td>衣服越しに掴む</td></tr>
       <tr><td>under_clothes</td><td>衣服の下に手を入れる</td></tr>
       <tr><td>under_shirt</td><td>シャツの下に手を入れる</td></tr>
@@ -487,13 +490,7 @@ table.negative-table td:last-child { width: 70%; }
       <tr><th>タグ</th><th>効果</th></tr>
       <tr><td>nipples</td><td>乳首が露出・見えている状態（前提）</td></tr>
       <tr><td>nipple_tweak</td><td>乳首をつまむ・ひねる</td></tr>
-      <tr><td>nipple_pull</td><td>乳首を引っ張る</td></tr>
-      <tr><td>nipple_pinch</td><td>乳首を強くつまむ</td></tr>
-      <tr><td>nipple_rub</td><td>乳首を擦る・指で転がす</td></tr>
-      <tr><td>fingering_nipples</td><td>指で乳首を弄る</td></tr>
       <tr><td>nipple_stimulation</td><td>乳首への刺激全般（抽象的だが安定）</td></tr>
-      <tr><td>puffy_nipples</td><td>ぷっくりした乳首の状態</td></tr>
-      <tr><td>perky_nipples</td><td>硬く尖った乳首の状態</td></tr>
       <tr><td>areolae</td><td>乳輪（必要に応じて）</td></tr>
     </table>
   </div>
@@ -546,7 +543,6 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>full_body</td><td>全身が映る構図</td></tr>
       <tr><td>close_up</td><td>接写・アップ</td></tr>
       <tr><td>dutch_angle</td><td>ダッチアングル（傾いた構図）</td></tr>
-      <tr><td>overhead</td><td>真上からの俯瞰</td></tr>
       <tr><td>worm's_eye_view</td><td>極端な下からの視点</td></tr>
       <tr><td>bird's_eye_view</td><td>鳥瞰図的な俯瞰</td></tr>
       <tr><td>side_view</td><td>横からの視点</td></tr>
@@ -570,7 +566,7 @@ table.negative-table td:last-child { width: 70%; }
     <div class="table-wrap">
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
-      <tr><td>lap_pov</td><td>膝枕視点</td></tr>
+      <tr><td>pov, lap_pillow</td><td>膝枕視点</td></tr>
       <tr><td>between_legs</td><td>脚の間からの視点</td></tr>
       <tr><td>upskirt</td><td>スカート内を見上げる</td></tr>
       <tr><td>peeking</td><td>覗き込む</td></tr>
@@ -588,15 +584,12 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>pov_hand_on_cheek</td><td>頬に手を置く</td></tr>
       <tr><td>pov_embrace</td><td>抱きしめる</td></tr>
       <tr><td>pov_carrying</td><td>お姫様抱っこ</td></tr>
-      <tr><td>pov_sitting_on_lap</td><td>膝上に座る</td></tr>
-      <tr><td>pov_leaning_forward</td><td>前のめりになる</td></tr>
-      <tr><td>pov_clothes_pull</td><td>服を引っ張る</td></tr>
-      <tr><td>pov_undressing</td><td>脱がせる</td></tr>
-      <tr><td>pov_grabbing</td><td>掴む</td></tr>
+      <tr><td>pov, sitting_on_lap</td><td>視聴者の膝の上に座る</td></tr>
+      <tr><td>pov, leaning_forward</td><td>前のめりになる</td></tr>
+      <tr><td>pov, clothes_pull</td><td>服を引っ張る</td></tr>
+      <tr><td>pov, undressing</td><td>脱がせる</td></tr>
       <tr><td>pov_kiss</td><td>キス視点</td></tr>
       <tr><td>pov_hug</td><td>抱きつき視点</td></tr>
-      <tr><td>pov_close</td><td>至近距離</td></tr>
-      <tr><td>pov_towering</td><td>上から見下ろす（キャラが大きく見える）</td></tr>
     </table>
   </div>
   <div class="note"><strong>POVのふれあい・アクション</strong></div>
@@ -604,11 +597,11 @@ table.negative-table td:last-child { width: 70%; }
   <div class="table-wrap">
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
-      <tr><td>pov_hair</td><td>髪が視界に入る</td></tr>
+      <tr><td>pov, hair_over_face</td><td>髪が視界に入る</td></tr>
       <tr><td>pov_breasts</td><td>胸視点</td></tr>
       <tr><td>pov_crotch</td><td>股間視点</td></tr>
-      <tr><td>pov_foot</td><td>足視点</td></tr>
-      <tr><td>pov_face</td><td>顔視点</td></tr>
+      <tr><td>pov, foot_focus</td><td>足視点</td></tr>
+      <tr><td>pov_face</td><td>顔視点（裏付けなし）</td></tr>
     </table>
   </div>
   <div class="note"><strong>POVの部位フォーカス</strong></div>
@@ -619,10 +612,8 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>front_facing</td><td>真正面を向く</td></tr>
       <tr><td>straight_on</td><td>真正面からの構図</td></tr>
       <tr><td>symmetrical_pose</td><td>左右対称のポーズ（正面感強調）</td></tr>
-      <tr><td>head_on</td><td>真正面を向いた頭部</td></tr>
       <tr><td>direct_gaze</td><td>真正面からの視線</td></tr>
-      <tr><td>centered</td><td>画面中央に配置</td></tr>
-      <tr><td>square_to_camera</td><td>カメラに対して真正面</td></tr>
+      <tr><td>centered</td><td>画面中央に配置（裏付けなし）</td></tr>
     </table>
   </div>
   <div class="note"><strong>正面の構図</strong></div>
@@ -630,12 +621,9 @@ table.negative-table td:last-child { width: 70%; }
   <div class="table-wrap">
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
-      <tr><td>sitting_on_viewer</td><td>視聴者の上に座っている</td></tr>
-      <tr><td>straddling_viewer</td><td>視聴者にまたがっている</td></tr>
-      <tr><td>on_viewer's_lap</td><td>視聴者の膝の上に座る</td></tr>
-      <tr><td>viewer_straddled</td><td>視聴者がまたがられている</td></tr>
-      <tr><td>sitting_on_chest</td><td>視聴者の胸の上に座る</td></tr>
-      <tr><td>sitting_on_stomach</td><td>視聴者の腹の上に座る</td></tr>
+      <tr><td>pov, sitting_on_person</td><td>視聴者の上に座っている</td></tr>
+      <tr><td>pov, straddling</td><td>視聴者にまたがっている</td></tr>
+      <tr><td>sitting_on_person</td><td>人の上に座る</td></tr>
       <tr><td>on_top_of_viewer</td><td>視聴者の上にいる</td></tr>
     </table>
   </div>
@@ -687,7 +675,7 @@ table.negative-table td:last-child { width: 70%; }
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>anime_eyes</td><td>アニメ特有の目の描き方</td></tr>
-      <tr><td>anime_sclera</td><td>白目部分もアニメ調に</td></tr>
+      <tr><td>anime_sclera</td><td>白目部分もアニメ調に（裏付けなし）</td></tr>
       <tr><td>expressive_eyes</td><td>表情豊かな目</td></tr>
       <tr><td>detailed_eyes</td><td>精密な目の描写</td></tr>
       <tr><td>soft_eyes</td><td>柔らかい目つき</td></tr>
@@ -698,12 +686,9 @@ table.negative-table td:last-child { width: 70%; }
   <div class="table-wrap">
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
-      <tr><td>thin_eyelashes</td><td>細いまつ毛</td></tr>
-      <tr><td>natural_eyelashes</td><td>ナチュラルなまつ毛</td></tr>
-      <tr><td>short_eyelashes</td><td>短いまつ毛</td></tr>
-      <tr><td>minimal_eyelashes</td><td>まつ毛を最小限に</td></tr>
+      <tr><td>eyelashes</td><td>まつ毛</td></tr>
+      <tr><td>minimal_eyelashes</td><td>まつ毛を最小限に（裏付けなし）</td></tr>
       <tr><td>colored_eyelashes</td><td>まつ毛に色をつける</td></tr>
-      <tr><td>upper_eyelashes</td><td>上まつげをはっきり描く</td></tr>
       <tr><td>thick_eyelashes</td><td>太いまつ毛</td></tr>
       <tr><td>long_eyelashes</td><td>長いまつ毛</td></tr>
     </table>
@@ -743,10 +728,10 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>swept_bangs</td><td>横に流した前髪</td></tr>
       <tr><td>hair_intakes</td><td>髪が内側に跳ねている</td></tr>
       <tr><td>sidelocks</td><td>顔の横に垂らした髪束</td></tr>
-      <tr><td>hair_over_ears</td><td>髪が耳にかかる</td></tr>
+      <tr><td>hair_over_ears</td><td>髪が耳にかかる（裏付けなし）</td></tr>
       <tr><td>hair_over_one_eye</td><td>片目を髪で隠す</td></tr>
       <tr><td>hair_over_shoulder</td><td>肩に髪を垂らす</td></tr>
-      <tr><td>hair_tucked_in</td><td>髪を耳にかけている</td></tr>
+      <tr><td>hair_behind_ear</td><td>髪を耳にかけている</td></tr>
     </table>
   </div>
   <div class="note"><strong>前髪・顔まわり</strong></div>
@@ -802,13 +787,11 @@ table.negative-table td:last-child { width: 70%; }
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>bow</td><td>リボン・蝶結び（一般）</td></tr>
-      <tr><td>front_bow</td><td>前に付いたリボン</td></tr>
-      <tr><td>side_bow</td><td>横に付いたリボン</td></tr>
       <tr><td>waist_bow</td><td>腰に付いたリボン</td></tr>
       <tr><td>wrist_bow</td><td>手首のリボン</td></tr>
       <tr><td>ankle_bow</td><td>足首のリボン</td></tr>
       <tr><td>bow_earrings</td><td>リボンイヤリング</td></tr>
-      <tr><td>bow_necklace</td><td>リボンネックレス</td></tr>
+      <tr><td>bow_necklace</td><td>リボンネックレス（裏付けなし）</td></tr>
       <tr><td>bow_bra</td><td>リボンブラ</td></tr>
       <tr><td>bow_panties</td><td>リボン付きパンツ</td></tr>
     </table>
@@ -822,9 +805,6 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>polka_dot_bow</td><td>水玉リボン</td></tr>
       <tr><td>striped_bow</td><td>ストライプリボン</td></tr>
       <tr><td>plaid_bow</td><td>チェックリボン</td></tr>
-      <tr><td>lace_bow</td><td>レースリボン</td></tr>
-      <tr><td>satin_bow</td><td>サテンリボン</td></tr>
-      <tr><td>silk_bow</td><td>シルクリボン</td></tr>
     </table>
   </div>
   <div class="note"><strong>リボン：柄・素材</strong></div>
@@ -847,18 +827,12 @@ table.negative-table td:last-child { width: 70%; }
   <div class="table-wrap">
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
-      <tr><td>lace_hairband</td><td>レースカチューシャ</td></tr>
       <tr><td>frilled_hairband</td><td>フリルカチューシャ</td></tr>
       <tr><td>black_hairband</td><td>黒いカチューシャ</td></tr>
       <tr><td>white_hairband</td><td>白いカチューシャ</td></tr>
       <tr><td>red_hairband</td><td>赤いカチューシャ</td></tr>
       <tr><td>pink_hairband</td><td>ピンクのカチューシャ</td></tr>
       <tr><td>maid_headdress</td><td>メイドカチューシャ</td></tr>
-      <tr><td>bunny_hairband</td><td>バニーカチューシャ</td></tr>
-      <tr><td>cat_ear_hairband</td><td>猫耳カチューシャ</td></tr>
-      <tr><td>jeweled_hairband</td><td>宝石付きカチューシャ</td></tr>
-      <tr><td>metal_hairband</td><td>メタルカチューシャ</td></tr>
-      <tr><td>ribbon-trimmed_hairband</td><td>リボン付きカチューシャ</td></tr>
     </table>
   </div>
   <div class="note"><strong>カチューシャ</strong></div>
@@ -872,11 +846,6 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>ribbon</td><td>リボン（一般）</td></tr>
       <tr><td>back_bow</td><td>後ろに大きなリボン・背中リボン</td></tr>
       <tr><td>large_bow</td><td>大きなリボン</td></tr>
-      <tr><td>back_ribbon</td><td>背中のリボン</td></tr>
-      <tr><td>ribbon_from_behind</td><td>後ろから見えるリボン</td></tr>
-      <tr><td>large_back_bow</td><td>大きな後ろリボン</td></tr>
-      <tr><td>bow_on_back</td><td>背中にリボン</td></tr>
-      <tr><td>ribbon_tied_in_back</td><td>後ろで結んだリボン</td></tr>
     </table>
   </div>
   <div class="note"><strong>背中のリボン・大きさ</strong></div>
@@ -884,10 +853,9 @@ table.negative-table td:last-child { width: 70%; }
   <div class="table-wrap">
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
-      <tr><td>hair_tied_with_ribbon</td><td>リボンで結んだ髪</td></tr>
-      <tr><td>ponytail_with_bow</td><td>リボン付きポニーテール</td></tr>
-      <tr><td>twintails_with_bow</td><td>リボン付きツインテール</td></tr>
-      <tr><td>braid_with_ribbon</td><td>リボン付き三つ編み</td></tr>
+      <tr><td>ponytail, hair_bow</td><td>リボン付きポニーテール</td></tr>
+      <tr><td>twintails, hair_bow</td><td>リボン付きツインテール</td></tr>
+      <tr><td>braid, hair_ribbon</td><td>リボン付き三つ編み</td></tr>
       <tr><td>ribbon_braid</td><td>リボンを編み込んだ髪</td></tr>
     </table>
   </div>
@@ -899,7 +867,6 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>bowtie</td><td>蝶ネクタイ風リボン</td></tr>
       <tr><td>neck_ribbon</td><td>首のリボン</td></tr>
       <tr><td>ribbon_choker</td><td>リボンチョーカー</td></tr>
-      <tr><td>choker_ribbon</td><td>チョーカー型リボン</td></tr>
     </table>
   </div>
   <div class="note"><strong>首のリボン</strong></div>
@@ -910,7 +877,6 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>hair_tie</td><td>ヘアゴム・髪留め</td></tr>
       <tr><td>scrunchie</td><td>シュシュ</td></tr>
       <tr><td>hair_scrunchie</td><td>シュシュ（髪用）</td></tr>
-      <tr><td>ponytail_holder</td><td>ポニーテールホルダー</td></tr>
       <tr><td>hair_bobbles</td><td>髪のボンボン飾り</td></tr>
       <tr><td>hair_beads</td><td>髪のビーズ飾り</td></tr>
       <tr><td>hair_rings</td><td>髪の輪っか飾り</td></tr>
@@ -923,7 +889,6 @@ table.negative-table td:last-child { width: 70%; }
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>hairpin</td><td>ヘアピン</td></tr>
-      <tr><td>bobby_pin</td><td>細いヘアピン</td></tr>
       <tr><td>hair_stick</td><td>かんざし（棒状）</td></tr>
       <tr><td>kanzashi</td><td>かんざし（日本式）</td></tr>
       <tr><td>hair_flower</td><td>髪に花</td></tr>
@@ -985,15 +950,12 @@ table.negative-table td:last-child { width: 70%; }
   <div class="table-wrap">
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
-      <tr><td>satin_ribbon</td><td>サテンリボン</td></tr>
-      <tr><td>silk_ribbon</td><td>シルクリボン</td></tr>
       <tr><td>plaid_ribbon</td><td>チェックリボン</td></tr>
       <tr><td>striped_ribbon</td><td>ストライプリボン</td></tr>
       <tr><td>polka_dot_ribbon</td><td>水玉リボン</td></tr>
-      <tr><td>lace_ribbon</td><td>レースリボン</td></tr>
       <tr><td>frilled_ribbon</td><td>フリルリボン</td></tr>
       <tr><td>ribbon_trim</td><td>リボン縁取り</td></tr>
-      <tr><td>ribbon-trimmed_hair_ornament</td><td>リボン縁取り髪飾り</td></tr>
+      <tr><td>hair_ornament, ribbon_trim</td><td>リボン縁取り髪飾り</td></tr>
     </table>
   </div>
   <div class="note"><strong>リボンの素材・柄・縁取り</strong></div>
@@ -1030,7 +992,7 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>baby_face</td><td>幼くて丸い顔立ち</td></tr>
       <tr><td>round_face</td><td>丸い顔立ち</td></tr>
       <tr><td>small_nose</td><td>小さな鼻</td></tr>
-      <tr><td>button_nose</td><td>ぷくっとした小鼻</td></tr>
+      <tr><td>small nose</td><td>小さい鼻</td></tr>
       <tr><td>no_nose</td><td>鼻を描かない（アニメ的簡略化）</td></tr>
     </table>
   </div>
@@ -1041,10 +1003,8 @@ table.negative-table td:last-child { width: 70%; }
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>blush</td><td>頬の赤み（照れ）</td></tr>
       <tr><td>light_blush</td><td>軽い照れ</td></tr>
-      <tr><td>heavy_blush</td><td>強い照れ</td></tr>
       <tr><td>nose_blush</td><td>鼻の赤み</td></tr>
       <tr><td>blush_stickers</td><td>丸い赤み（デフォルメ照れ）</td></tr>
-      <tr><td>pink_cheeks</td><td>ピンクの頬</td></tr>
     </table>
   </div>
   <div class="note"><strong>頬の赤み</strong></div>
@@ -1054,6 +1014,7 @@ table.negative-table td:last-child { width: 70%; }
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>smile</td><td>笑顔</td></tr>
       <tr><td>light_smile</td><td>控えめな微笑み</td></tr>
+      <tr><td>smirk</td><td>にやり顔・薄笑み</td></tr>
       <tr><td>happy</td><td>嬉しそうな表情</td></tr>
       <tr><td>open_mouth</td><td>口を少し開ける</td></tr>
       <tr><td>closed_mouth</td><td>口を閉じた表情</td></tr>
@@ -1067,6 +1028,7 @@ table.negative-table td:last-child { width: 70%; }
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>embarrassed</td><td>恥ずかしがっている</td></tr>
+      <tr><td>sweatdrop</td><td>汗マーク（困惑・照れ）</td></tr>
       <tr><td>kawaii</td><td>可愛い（全体の雰囲気）</td></tr>
       <tr><td>moe</td><td>萌え要素</td></tr>
       <tr><td>innocent</td><td>無垢・純粋な印象</td></tr>
@@ -1083,7 +1045,6 @@ table.negative-table td:last-child { width: 70%; }
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>pale_skin</td><td>白い肌（透明感）</td></tr>
       <tr><td>fair_skin</td><td>色白の肌</td></tr>
-      <tr><td>glowing_skin</td><td>ツヤのある肌</td></tr>
       <tr><td>fangs</td><td>小さい八重歯</td></tr>
       <tr><td>tooth_gap</td><td>歯の隙間</td></tr>
       <tr><td>childlike</td><td>子供っぽい（幼さ）</td></tr>
@@ -1134,7 +1095,6 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>breasts_apart</td><td>胸が離れている状態</td></tr>
       <tr><td>breasts_out</td><td>胸が服の外に出ている状態</td></tr>
       <tr><td>one_breast_out</td><td>片方の胸だけ出ている</td></tr>
-      <tr><td>breasts_outside</td><td>胸が服の外に出ている（両方）</td></tr>
       <tr><td>areola_slip</td><td>乳首乳輪がちらっと見える</td></tr>
       <tr><td>nipple_slip</td><td>乳首がうっかり見える</td></tr>
       <tr><td>breast_slip</td><td>胸がうっかり出る</td></tr>
@@ -1149,7 +1109,6 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>breast_hold</td><td>自分の胸を手で持う・支える</td></tr>
       <tr><td>breast_grab</td><td>自分または他人の胸を掴む</td></tr>
       <tr><td>groping</td><td>胸や尻などを触る行為</td></tr>
-      <tr><td>breast_squeeze</td><td>胸を押し潰す・押し潰される</td></tr>
       <tr><td>breast_smother</td><td>胸で顔を押しつぶす</td></tr>
     </table>
   </div>
@@ -1160,13 +1119,7 @@ table.negative-table td:last-child { width: 70%; }
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>between_breasts</td><td>胸の間に何かがある・挟まっている</td></tr>
       <tr><td>clothes_between_breasts</td><td>服の布地が胸の間に入る</td></tr>
-      <tr><td>object_between_breasts</td><td>物が胸の間に挟まっている</td></tr>
-      <tr><td>phone_between_breasts</td><td>スマホを胸の間に挟む</td></tr>
-      <tr><td>gun_between_breasts</td><td>銃を胸の間に挟む</td></tr>
-      <tr><td>money_between_breasts</td><td>お金を胸の間に挟む</td></tr>
-      <tr><td>pen_between_breasts</td><td>ペンを胸の間に挟む</td></tr>
       <tr><td>arm_between_breasts</td><td>腕を胸の間に挟む</td></tr>
-      <tr><td>hand_between_breasts</td><td>手を胸の間に入れる</td></tr>
       <tr><td>head_between_breasts</td><td>顔を胸の間に埋める</td></tr>
     </table>
   </div>
@@ -1176,7 +1129,6 @@ table.negative-table td:last-child { width: 70%; }
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>breast_rest</td><td>胸を何かに乗せている</td></tr>
-      <tr><td>mutual_breast_grab</td><td>互いに胸を掴み合う</td></tr>
       <tr><td>asymmetrical_docking</td><td>胸同士を合わせる（片方ずつ）</td></tr>
       <tr><td>symmetrical_docking</td><td>胸同士を合わせる（両方）</td></tr>
     </table>
@@ -1187,12 +1139,11 @@ table.negative-table td:last-child { width: 70%; }
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>breast_envy</td><td>他人の胸の大きさを羨む描写</td></tr>
-      <tr><td>breast_pride</td><td>胸の大きさを自慢する</td></tr>
+      <tr><td>breast_pride</td><td>胸の大きさを自慢する（裏付けなし）</td></tr>
       <tr><td>breast_conscious</td><td>胸の大きさを気にしている</td></tr>
-      <tr><td>small_breast_complex</td><td>胸が小さいことをコンプレックスに思う</td></tr>
-      <tr><td>breast_comparison</td><td>胸の大きさを比べる</td></tr>
+      <tr><td>bust_chart</td><td>胸の大きさを比べる</td></tr>
       <tr><td>breast_contest</td><td>胸の大きさで競う</td></tr>
-      <tr><td>measuring_breasts</td><td>胸のサイズを測っている</td></tr>
+      <tr><td>measuring, breasts</td><td>胸のサイズを測っている</td></tr>
     </table>
   </div>
   <div class="note"><strong>大きさへの意識</strong></div>
@@ -1201,8 +1152,7 @@ table.negative-table td:last-child { width: 70%; }
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>breast_poke</td><td>胸を指でつつく</td></tr>
-      <tr><td>weight_on_breasts</td><td>胸に重みがかかっている</td></tr>
-      <tr><td>swinging_breasts</td><td>胸が揺れている</td></tr>
+      <tr><td>weight_on_breasts</td><td>胸に重みがかかっている（裏付けなし）</td></tr>
       <tr><td>bouncing_breasts</td><td>胸が弾んでいる</td></tr>
       <tr><td>breasts_on_glass</td><td>胸をガラスに押し付ける</td></tr>
       <tr><td>breasts_on_table</td><td>胸をテーブルに押し付ける</td></tr>
@@ -1221,13 +1171,8 @@ table.negative-table td:last-child { width: 70%; }
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>nipples</td><td>乳首が見えている</td></tr>
-      <tr><td>puffy_nipples</td><td>ぷっくりした乳首</td></tr>
       <tr><td>covered_nipples</td><td>服越しに乳首の形が浮いている</td></tr>
       <tr><td>small_nipples</td><td>小さい乳首</td></tr>
-      <tr><td>perky_nipples</td><td>尖った乳首</td></tr>
-      <tr><td>erect_nipples</td><td>勃起した乳首</td></tr>
-      <tr><td>nipples_through_clothes</td><td>服越しに乳首が浮いている</td></tr>
-      <tr><td>visible_nipples</td><td>乳首が見えている</td></tr>
     </table>
   </div>
   <div class="note"><strong>乳首の状態</strong></div>
@@ -1235,10 +1180,9 @@ table.negative-table td:last-child { width: 70%; }
   <div class="table-wrap">
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
-      <tr><td>areola</td><td>乳輪が見える</td></tr>
+      <tr><td>large areolae</td><td>乳輪が見える</td></tr>
       <tr><td>areolae</td><td>乳輪（複数形・一般タグ）</td></tr>
       <tr><td>large_areolae</td><td>大きな乳輪</td></tr>
-      <tr><td>puffy_areolae</td><td>ぷっくりした乳輪</td></tr>
       <tr><td>dark_areolae</td><td>色の濃い乳輪</td></tr>
       <tr><td>light_areolae</td><td>色の薄い乳輪</td></tr>
     </table>
@@ -1249,9 +1193,8 @@ table.negative-table td:last-child { width: 70%; }
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>nipple_rings</td><td>乳首ピアス</td></tr>
-      <tr><td>pierced_nipples</td><td>乳首にピアスがある</td></tr>
       <tr><td>nipple_tweak</td><td>乳首をつねる・いじる</td></tr>
-      <tr><td>bandaid_on_nipples</td><td>絆創膏で乳首を隠す</td></tr>
+      <tr><td>bandaids_on_nipples</td><td>絆創膏で乳首を隠す</td></tr>
       <tr><td>pasties</td><td>ニプレス（乳首隠しシール）</td></tr>
     </table>
   </div>
@@ -1265,14 +1208,12 @@ table.negative-table td:last-child { width: 70%; }
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>breastfeeding</td><td>授乳</td></tr>
       <tr><td>sucking_breasts</td><td>胸を吸われている</td></tr>
-      <tr><td>licking_breasts</td><td>胸を舐められている</td></tr>
-      <tr><td>kissing_breasts</td><td>胸にキスしている</td></tr>
-      <tr><td>biting_breasts</td><td>胸を噛まれている</td></tr>
-      <tr><td>fondling_breasts</td><td>胸を揉まれている（優しく）</td></tr>
-      <tr><td>massaging_breasts</td><td>胸をマッサージしている</td></tr>
-      <tr><td>slapping_breasts</td><td>胸を叩いている</td></tr>
+      <tr><td>kiss, breasts</td><td>胸にキスしている</td></tr>
+      <tr><td>biting, breasts</td><td>胸を噛まれている</td></tr>
+      <tr><td>slapping, breasts</td><td>胸を叩いている</td></tr>
       <tr><td>breast_sucking</td><td>胸を吸っている</td></tr>
-      <tr><td>pinching_breasts</td><td>胸をつねっている</td></tr>
+      <tr><td>pinching, breasts</td><td>胸をつねっている</td></tr>
+      <tr><td>face_to_breasts</td><td>胸に顔を埋める</td></tr>
     </table>
   </div>
 </section>
@@ -1285,10 +1226,11 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>mole_on_breast</td><td>胸にほくろがある</td></tr>
       <tr><td>oiled</td><td>オイルを塗っている</td></tr>
       <tr><td>shiny_skin</td><td>肌にツヤがある</td></tr>
+      <tr><td>oiled_skin</td><td>オイルで艶のある肌</td></tr>
       <tr><td>sweat</td><td>汗をかいている</td></tr>
       <tr><td>wet</td><td>濡れている</td></tr>
+      <tr><td>wet_skin</td><td>濡れた肌</td></tr>
       <tr><td>wet_breasts</td><td>胸が濡れている</td></tr>
-      <tr><td>soapy</td><td>石鹸泡まみれ</td></tr>
       <tr><td>soap_bubbles</td><td>泡</td></tr>
     </table>
   </div>
@@ -1302,8 +1244,6 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>food_on_breasts</td><td>胸に食べ物がついている</td></tr>
       <tr><td>whipped_cream</td><td>生クリーム</td></tr>
       <tr><td>chocolate_on_body</td><td>チョコレートが体に</td></tr>
-      <tr><td>strawberry_on_breasts</td><td>胸にイチゴを乗せる</td></tr>
-      <tr><td>nyotaimori</td><td>女体盛り</td></tr>
     </table>
   </div>
   <div class="note"><strong>拘束・食べ物</strong></div>
@@ -1312,9 +1252,7 @@ table.negative-table td:last-child { width: 70%; }
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>body_writing</td><td>体に文字を書く</td></tr>
-      <tr><td>love_bites_on_breasts</td><td>胸にキスマークがある</td></tr>
       <tr><td>tally</td><td>正の字などのカウントを体に書く</td></tr>
-      <tr><td>count</td><td>回数をカウントする描写</td></tr>
     </table>
   </div>
   <div class="note"><strong>体への書き込み・跡</strong></div>
@@ -1329,14 +1267,13 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>bra</td><td>ブラジャーを着用している</td></tr>
       <tr><td>bra_lift</td><td>ブラを持ち上げる・ずらす</td></tr>
       <tr><td>bra_pull</td><td>ブラを下げる・外す動作</td></tr>
-      <tr><td>adjusting_bra</td><td>ブラを直している</td></tr>
       <tr><td>bra_peek</td><td>ブラがちらっとえる</td></tr>
       <tr><td>strap_gap</td><td>ブラ紐と肌の間に隙間がある</td></tr>
       <tr><td>bra_strap</td><td>ブラ紐が見える</td></tr>
       <tr><td>bra_visible_through_clothes</td><td>服越しにブラの形が見える</td></tr>
-      <tr><td>snapped_bra</td><td>ブラのホックが外れた・壊れた</td></tr>
-      <tr><td>broken_bra</td><td>壊れたブラ</td></tr>
-      <tr><td>burst_bra</td><td>胸でブラが弾けた</td></tr>
+      <tr><td>snapped_bra</td><td>ブラのホックが外れた・壊れた（裏付けなし）</td></tr>
+      <tr><td>bra, torn_clothes</td><td>壊れたブラ</td></tr>
+      <tr><td>bursting_breasts, bra</td><td>胸でブラが弾けた</td></tr>
     </table>
   </div>
   <div class="note"><strong>ブラの基本・状態</strong></div>
@@ -1377,15 +1314,12 @@ table.negative-table td:last-child { width: 70%; }
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>bow_bikini</td><td>リボンで結ぶビキニ</td></tr>
       <tr><td>untied_bikini</td><td>紐が解けたビキニ</td></tr>
-      <tr><td>untied_bikini_top</td><td>ビキニトップの紐が解けた</td></tr>
-      <tr><td>bikini_top_only</td><td>ビキニトップのみ</td></tr>
       <tr><td>front-tie_bikini_top</td><td>前で結ぶビキニトップ</td></tr>
       <tr><td>frilled_bikini</td><td>フリルビキニ</td></tr>
       <tr><td>side-tie_bikini_bottom</td><td>横紐ビキニボトム</td></tr>
-      <tr><td>highleg_bikini</td><td>ハイレグビキニ</td></tr>
       <tr><td>slingshot_swimsuit</td><td>スリングショット水着</td></tr>
       <tr><td>o-ring_bikini</td><td>リング付きビキニ</td></tr>
-      <tr><td>latex_swimsuit</td><td>ラテックス水着</td></tr>
+      <tr><td>latex, swimsuit</td><td>ラテックス水着</td></tr>
       <tr><td>see-through_swimsuit</td><td>シースルー水着</td></tr>
     </table>
   </div>
@@ -1397,7 +1331,7 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>wet_swimsuit</td><td>濡れた水着</td></tr>
       <tr><td>swimsuit_under_clothes</td><td>服の下に水着</td></tr>
       <tr><td>bikini_under_clothes</td><td>服の下にビキニ</td></tr>
-      <tr><td>swimsuit_skirt</td><td>水着にスカート</td></tr>
+      <tr><td>swimsuit, skirt</td><td>水着にスカート</td></tr>
       <tr><td>sarong</td><td>サロング（水着の上に巻く布）</td></tr>
     </table>
   </div>
@@ -1406,8 +1340,7 @@ table.negative-table td:last-child { width: 70%; }
     <div class="table-wrap">
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
-      <tr><td>beach_volleyball_uniform</td><td>ビーチバレー用スポーツビキニ</td></tr>
-      <tr><td>swimsuit_costume</td><td>水着コスチューム</td></tr>
+      <tr><td>beach_volleyball_uniform</td><td>ビーチバレー用スポーツビキニ（裏付けなし）</td></tr>
     </table>
   </div>
   <div class="note"><strong>スポーツ・コスチューム水着</strong></div>
@@ -1415,16 +1348,11 @@ table.negative-table td:last-child { width: 70%; }
   <div class="table-wrap">
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
-      <tr><td>animal_print_bikini</td><td>アニマル柄ビキニ</td></tr>
       <tr><td>polka_dot_swimsuit</td><td>水玉水着</td></tr>
-      <tr><td>striped_swimsuit</td><td>ストライプ水着</td></tr>
-      <tr><td>floral_swimsuit</td><td>花柄水着</td></tr>
       <tr><td>white_bikini</td><td>白いビキニ</td></tr>
       <tr><td>black_bikini</td><td>黒いビキニ</td></tr>
       <tr><td>red_bikini</td><td>赤いビキニ</td></tr>
-      <tr><td>blue_swimsuit</td><td>青い水着</td></tr>
-      <tr><td>swimsuit_tan</td><td>水着跡の日焼け</td></tr>
-      <tr><td>bikini_tan</td><td>ビキニ跡の日焼け</td></tr>
+      <tr><td>tanlines</td><td>水着跡の日焼け</td></tr>
     </table>
   </div>
   <div class="note"><strong>柄・色・日焼け跡</strong></div>
@@ -1433,13 +1361,11 @@ table.negative-table td:last-child { width: 70%; }
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>swimsuit_aside</td><td>水着をずらす</td></tr>
-      <tr><td>bikini_aside</td><td>ビキニをずらす</td></tr>
       <tr><td>swimsuit_around_one_leg</td><td>水着が片足に絡まる</td></tr>
-      <tr><td>swimsuit_in_mouth</td><td>水着を口にくわえる</td></tr>
-      <tr><td>swimsuit_pull_aside</td><td>水着を横にずらす</td></tr>
-      <tr><td>bikini_under_breasts</td><td>ビキニが胸下にずれている</td></tr>
+      <tr><td>clothes_in_mouth</td><td>水着を口にくわえる</td></tr>
+      <tr><td>bikini_under_breasts</td><td>ビキニが胸下にずれている（裏付けなし）</td></tr>
       <tr><td>bikini_bridge</td><td>ビキニと体の間に隙間</td></tr>
-      <tr><td>swimsuit_between_buttocks</td><td>水着が尻の間に食い込む</td></tr>
+      <tr><td>swimsuit, wedgie</td><td>水着が尻の間に食い込む</td></tr>
     </table>
   </div>
   <div class="note"><strong>ずらす・脱ぎかけ</strong></div>
@@ -1447,15 +1373,14 @@ table.negative-table td:last-child { width: 70%; }
   <div class="table-wrap">
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
-      <tr><td>swimsuit_costume_play</td><td>水着コスプレ</td></tr>
-      <tr><td>swimsuit_model</td><td>水着モデル風</td></tr>
+      <tr><td>swimsuit_model</td><td>水着モデル風（裏付けなし）</td></tr>
       <tr><td>beach</td><td>ビーチ</td></tr>
       <tr><td>pool</td><td>プール</td></tr>
       <tr><td>locker_room</td><td>更衣室</td></tr>
-      <tr><td>swimsuit_shower</td><td>水着でシャワー</td></tr>
-      <tr><td>swimsuit_oil</td><td>水着にオイル</td></tr>
-      <tr><td>swimsuit_wet_hair</td><td>濡れ髪＋水着</td></tr>
-      <tr><td>swimsuit_sunlight</td><td>水着に夕日・逆光</td></tr>
+      <tr><td>swimsuit, showering</td><td>水着でシャワー</td></tr>
+      <tr><td>swimsuit_oil</td><td>水着にオイル（裏付けなし）</td></tr>
+      <tr><td>swimsuit, wet_hair</td><td>濡れ髪＋水着</td></tr>
+      <tr><td>swimsuit, sunlight</td><td>水着に夕日・逆光</td></tr>
     </table>
   </div>
   <div class="note"><strong>コスプレ・場所・シーン</strong></div>
@@ -1484,7 +1409,6 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>tight_clothes</td><td>タイトな服（体のラインが出る）</td></tr>
       <tr><td>loose_clothes</td><td>ゆるい服（胸元が開く）</td></tr>
       <tr><td>skin_tight</td><td>肌にぴたっと張り付く服</td></tr>
-      <tr><td>bodycon</td><td>ボディコン（体のラインが出る）</td></tr>
     </table>
   </div>
   <div class="note"><strong>質感・フィット感</strong></div>
@@ -1511,7 +1435,7 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>partially_unbuttoned</td><td>部分的にボタンが外れている</td></tr>
       <tr><td>dress_shirt</td><td>ワイシャツ</td></tr>
       <tr><td>oversized_shirt</td><td>大きすぎるシャツ</td></tr>
-      <tr><td>shirt_only</td><td>シャツのみ</td></tr>
+      <tr><td>shirt, bottomless</td><td>シャツのみ</td></tr>
     </table>
   </div>
   <div class="note"><strong>シャツ系</strong></div>
@@ -1531,7 +1455,6 @@ table.negative-table td:last-child { width: 70%; }
   <div class="table-wrap">
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
-      <tr><td>zipper_pull</td><td>ジッパーを下ろす動作</td></tr>
       <tr><td>unzipped</td><td>ジッパーが下がっている</td></tr>
       <tr><td>dress_tug</td><td>ドレスを引っ張る</td></tr>
       <tr><td>clothes_pull</td><td>服を引っ張る</td></tr>
@@ -1557,9 +1480,6 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>nipple_cutout</td><td>乳首の位置に穴が開いた服</td></tr>
       <tr><td>breastless_clothes</td><td>胸の部分がない服</td></tr>
       <tr><td>crotchless</td><td>股部分がない服</td></tr>
-      <tr><td>sideboob_cutout</td><td>脇腹側に胸が見える穴が開いた服</td></tr>
-      <tr><td>cleavage_window</td><td>胸元に窓のような穴が開いた服</td></tr>
-      <tr><td>boob_window</td><td>胸の形に合わせた穴が開いた服</td></tr>
       <tr><td>heart_cutout</td><td>ハート型の穴が開いた服（胸元）</td></tr>
       <tr><td>star_cutout</td><td>星型の穴が開いた服（胸元）</td></tr>
       <tr><td>keyhole</td><td>鍵穴型の穴が開いた服（胸元）</td></tr>
@@ -1577,7 +1497,7 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>topless</td><td>上を着ていない</td></tr>
       <tr><td>nude</td><td>全裸</td></tr>
       <tr><td>completely_nude</td><td>完全に裸</td></tr>
-      <tr><td>partially_nude</td><td>部分的に裸</td></tr>
+      <tr><td>partially_undressed</td><td>部分的に裸</td></tr>
     </table>
   </div>
   <div class="note"><strong>裸・部分裸</strong></div>
@@ -1588,7 +1508,7 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>naked_towel</td><td>裸にタオル</td></tr>
       <tr><td>naked_sheet</td><td>裸にシーツ</td></tr>
       <tr><td>naked_ribbon</td><td>裸にリボン</td></tr>
-      <tr><td>naked_necktie</td><td>裸にネクタイ</td></tr>
+      <tr><td>nude, necktie</td><td>裸にネクタイ</td></tr>
       <tr><td>naked_hoodie</td><td>裸にパーカー</td></tr>
       <tr><td>naked_apron</td><td>裸にエプロン</td></tr>
     </table>
@@ -1602,7 +1522,7 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>kimono</td><td>着物</td></tr>
       <tr><td>yukata</td><td>浴衣</td></tr>
       <tr><td>towel</td><td>タオル</td></tr>
-      <tr><td>towel_around_breasts</td><td>胸にタオルを巻いている</td></tr>
+      <tr><td>towel, breasts</td><td>胸にタオルを巻いている</td></tr>
       <tr><td>latex</td><td>ラテックス服（ぴたっと張付く）</td></tr>
       <tr><td>leotard</td><td>レオタード</td></tr>
       <tr><td>bodysuit</td><td>ボディスーツ</td></tr>
@@ -1621,14 +1541,11 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>light_censor</td><td>光で胸を隠す（聖光）</td></tr>
       <tr><td>bar_censor</td><td>黒線・モザイクで隠す</td></tr>
       <tr><td>convenient_arm</td><td>腕で胸を隠す</td></tr>
-      <tr><td>convenient_hair</td><td>髪で胸を隠す</td></tr>
       <tr><td>convenient_leg</td><td>脚で胸を隠す</td></tr>
-      <tr><td>convenient_head</td><td>頭の位置で胸を隠す</td></tr>
       <tr><td>wardrobe_malfunction</td><td>服の事故</td></tr>
       <tr><td>accidental_exposure</td><td>うっかり見えてしまう</td></tr>
       <tr><td>open_fly</td><td>フライが開いている</td></tr>
       <tr><td>unfastened</td><td>留め具が外れている</td></tr>
-      <tr><td>hook_and_eye</td><td>ホックが外れている</td></tr>
     </table>
   </div>
 </section>
@@ -1651,7 +1568,6 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>group_sex</td><td>複数プレイ</td></tr>
       <tr><td>orgy</td><td>乱交</td></tr>
       <tr><td>threesome</td><td>3P</td></tr>
-      <tr><td>foursome</td><td>4P</td></tr>
     </table>
   </div>
   <div class="note"><strong>基本行為・複数</strong></div>
@@ -1664,7 +1580,7 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>clitoral_stimulation</td><td>クリトリス刺激</td></tr>
       <tr><td>clitoris</td><td>クリトリス</td></tr>
       <tr><td>labia</td><td>陰唇</td></tr>
-      <tr><td>vagina</td><td>膣</td></tr>
+      <tr><td>pussy</td><td>膣</td></tr>
       <tr><td>penis</td><td>陰茎</td></tr>
       <tr><td>testicles</td><td>睾丸</td></tr>
     </table>
@@ -1676,8 +1592,6 @@ table.negative-table td:last-child { width: 70%; }
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>ejaculation</td><td>射精</td></tr>
       <tr><td>cum</td><td>精液</td></tr>
-      <tr><td>cum_inside</td><td>中出し</td></tr>
-      <tr><td>cum_outside</td><td>出し</td></tr>
       <tr><td>cum_on_body</td><td>体に精液をかける</td></tr>
       <tr><td>cum_on_breasts</td><td>胸に精液をかける</td></tr>
       <tr><td>bukkake</td><td>複数人からのぶっかけ</td></tr>
@@ -1709,8 +1623,6 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>used_condom</td><td>使用済みコンドーム</td></tr>
       <tr><td>condom_on_penis</td><td>ペニスにコンドーム</td></tr>
       <tr><td>condom_belt</td><td>コンドームベルト（使用済みを多数付ける）</td></tr>
-      <tr><td>contraceptive</td><td>避妊具（一般）</td></tr>
-      <tr><td>birth_control</td><td>避妊</td></tr>
       <tr><td>pill</td><td>ピル</td></tr>
     </table>
   </div>
@@ -1734,7 +1646,6 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>mating_press</td><td>種付けプレス（深い正常位）</td></tr>
       <tr><td>piledriver</td><td>パイルドライバー</td></tr>
       <tr><td>full_nelson</td><td>フルネルソン（腕を後ろから掴む）</td></tr>
-      <tr><td>jack-o_challenge</td><td>ジャック・オー挑戦（尻を上げたポーズ）</td></tr>
       <tr><td>top-down_bottom-up</td><td>尻を上げ顔を下げた姿勢</td></tr>
     </table>
   </div>
@@ -1753,8 +1664,7 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>all_fours</td><td>四つん這い</td></tr>
       <tr><td>presenting</td><td>尻や股を見せるポーズ</td></tr>
       <tr><td>spread_legs</td><td>脚を開く</td></tr>
-      <tr><td>open_legs</td><td>脚を開いた状態</td></tr>
-      <tr><td>closed_legs</td><td>脚を閉じた状態</td></tr>
+      <tr><td>legs_together</td><td>脚を閉じた状態</td></tr>
       <tr><td>knees_to_chest</td><td>膝を胸につける</td></tr>
       <tr><td>legs_over_head</td><td>脚を頭の後ろに回す</td></tr>
       <tr><td>contortionist</td><td>軟体・柔軟な体位</td></tr>
@@ -1770,16 +1680,14 @@ table.negative-table td:last-child { width: 70%; }
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>bondage</td><td>拘束・緊縛（一般）</td></tr>
       <tr><td>shibari</td><td>縛り・日本式緊縛</td></tr>
-      <tr><td>kinbaku</td><td>緊縛（日本式）</td></tr>
       <tr><td>rope</td><td>縄</td></tr>
       <tr><td>bound</td><td>縛られた状態</td></tr>
-      <tr><td>tied_up</td><td>縛り付けられた</td></tr>
       <tr><td>arms_behind_back</td><td>後ろ手に縛る</td></tr>
       <tr><td>frog_tie</td><td>蛙 tie（脚を折り曲げて縛る）</td></tr>
       <tr><td>crotch_rope</td><td>股縄</td></tr>
       <tr><td>chain</td><td>鎖で拘束</td></tr>
       <tr><td>handcuffs</td><td>手錠</td></tr>
-      <tr><td>legcuffs</td><td>足枷</td></tr>
+      <tr><td>shackles</td><td>足枷</td></tr>
       <tr><td>spreader_bar</td><td>脚を開く拘束具</td></tr>
       <tr><td>straitjacket</td><td>拘束衣</td></tr>
     </table>
@@ -1807,10 +1715,7 @@ table.negative-table td:last-child { width: 70%; }
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>pet_play</td><td>ペットプレイ</td></tr>
       <tr><td>slave</td><td>奴隷</td></tr>
-      <tr><td>master_slave</td><td>主従関係</td></tr>
       <tr><td>dominatrix</td><td>女王様・女性支配者</td></tr>
-      <tr><td>domination</td><td>支配・優位</td></tr>
-      <tr><td>submission</td><td>服従・劣勢</td></tr>
       <tr><td>power_bottom</td><td>受けながら主導権を握る</td></tr>
     </table>
   </div>
@@ -1820,9 +1725,8 @@ table.negative-table td:last-child { width: 70%; }
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>forced_orgasm</td><td>強制オーガズム</td></tr>
-      <tr><td>orgasm_denial</td><td>オーガズム拒否・寸止め</td></tr>
-      <tr><td>edging</td><td>寸止めプレイ</td></tr>
-      <tr><td>overstimulation</td><td>過剰刺激</td></tr>
+      <tr><td>orgasm_denial</td><td>寸止めプレイ</td></tr>
+      <tr><td>overstimulation</td><td>過剰刺激（裏付けなし）</td></tr>
       <tr><td>post_orgasm_torture</td><td>事後責め</td></tr>
     </table>
   </div>
@@ -1849,7 +1753,7 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>object_insertion</td><td>物を挿入</td></tr>
       <tr><td>vaginal_object_insertion</td><td>膣に物を挿入</td></tr>
       <tr><td>speculum</td><td>膣鏡・スペキュラム</td></tr>
-      <tr><td>medical</td><td>医療プレイ</td></tr>
+      <tr><td>physical_examination</td><td>医療プレイ</td></tr>
     </table>
   </div>
   <div class="note"><strong>挿入・医療</strong></div>
@@ -1858,7 +1762,6 @@ table.negative-table td:last-child { width: 70%; }
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>peeing_self</td><td>おもらし</td></tr>
-      <tr><td>wetting</td><td>おもらし（服を濡らす）</td></tr>
       <tr><td>drooling</td><td>よだれ</td></tr>
       <tr><td>tears</td><td>涙</td></tr>
       <tr><td>crying</td><td>泣いている</td></tr>
@@ -1873,20 +1776,18 @@ table.negative-table td:last-child { width: 70%; }
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>tongue_out</td><td>舌を出す</td></tr>
       <tr><td>french_kiss</td><td>ディープキス・ベロチュー</td></tr>
-      <tr><td>kissing</td><td>キス</td></tr>
       <tr><td>kissing_penis</td><td>ペニスにキス</td></tr>
-      <tr><td>kissing_breast</td><td>胸にキス</td></tr>
-      <tr><td>kissing_thigh</td><td>太ももにキス</td></tr>
-      <tr><td>kissing_navel</td><td>へそにキス</td></tr>
-      <tr><td>kissing_foot</td><td>足にキス</td></tr>
+      <tr><td>kiss, thighs</td><td>太ももにキス</td></tr>
+      <tr><td>kiss, navel</td><td>へそにキス</td></tr>
+      <tr><td>kiss, feet</td><td>足にキス</td></tr>
       <tr><td>licking</td><td>舐める</td></tr>
       <tr><td>licking_penis</td><td>ペニスを舐める</td></tr>
-      <tr><td>licking_testicles</td><td>玉舐め</td></tr>
+      <tr><td>licking, testicles</td><td>玉舐め</td></tr>
       <tr><td>licking_nipple</td><td>乳首を舐める</td></tr>
       <tr><td>licking_armpit</td><td>腋舐め</td></tr>
       <tr><td>licking_foot</td><td>足舐め</td></tr>
-      <tr><td>sucking</td><td>吸う</td></tr>
-      <tr><td>ball_sucking</td><td>玉吸い</td></tr>
+      <tr><td>sucking</td><td>吸う（裏付けなし）</td></tr>
+      <tr><td>testicle_sucking</td><td>玉吸い</td></tr>
       <tr><td>toe_sucking</td><td>足指を吸う</td></tr>
     </table>
   </div>
@@ -1897,10 +1798,8 @@ table.negative-table td:last-child { width: 70%; }
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>double_handjob</td><td>両手手コキ</td></tr>
       <tr><td>gloved_handjob</td><td>手袋手コキ</td></tr>
-      <tr><td>self_fondle</td><td>自分の胸を揉む</td></tr>
-      <tr><td>self_fingering</td><td>自分に指入れ</td></tr>
       <tr><td>mutual_masturbation</td><td>相互オナニー</td></tr>
-      <tr><td>phone_sex</td><td>電話セックス</td></tr>
+      <tr><td>sex, phone</td><td>電話セックス</td></tr>
       <tr><td>sexting</td><td>sexting・メッセージ送りながら</td></tr>
     </table>
   </div>
@@ -1909,13 +1808,10 @@ table.negative-table td:last-child { width: 70%; }
   <div class="table-wrap">
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
-      <tr><td>hidden_sex</td><td>隠れてセックス</td></tr>
-      <tr><td>public_sex</td><td>公開セックス</td></tr>
+      <tr><td>stealth_sex</td><td>隠れてセックス</td></tr>
       <tr><td>public_indecency</td><td>公然わいせつ</td></tr>
       <tr><td>exhibitionism</td><td>露出癖</td></tr>
       <tr><td>voyeurism</td><td>覗き</td></tr>
-      <tr><td>peeping</td><td>覗き込む</td></tr>
-      <tr><td>hidden_camera</td><td>隠し撮り</td></tr>
       <tr><td>downblouse</td><td>胸元を覗く</td></tr>
     </table>
   </div>
@@ -1929,11 +1825,9 @@ table.negative-table td:last-child { width: 70%; }
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>foot_fetish</td><td>足フェチ</td></tr>
       <tr><td>armpit</td><td>腋</td></tr>
-      <tr><td>armpit_focus</td><td>腋が焦点</td></tr>
       <tr><td>armpit_crease</td><td>腋のシワ</td></tr>
       <tr><td>armpit_cutout</td><td>腋に穴が開いた服</td></tr>
       <tr><td>navel</td><td>へそ</td></tr>
-      <tr><td>navel_focus</td><td>へそが焦点</td></tr>
       <tr><td>navel_cutout</td><td>へそに穴が開いた服</td></tr>
       <tr><td>midriff</td><td>腹部・へそ周り</td></tr>
       <tr><td>back_focus</td><td>背中が焦点</td></tr>
@@ -1957,8 +1851,6 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>skirt_lift</td><td>スカートをめくる</td></tr>
       <tr><td>dress_lift</td><td>ドレスをめくる</td></tr>
       <tr><td>panty_pull</td><td>パンティを下げる</td></tr>
-      <tr><td>panty_pull_down</td><td>パンティを脱ぐ途中</td></tr>
-      <tr><td>pulling_own_panties</td><td>自分でパンティを脱ぐ</td></tr>
       <tr><td>no_panties</td><td>パンティを履いていない</td></tr>
       <tr><td>crotch_seam</td><td>股のシーム・縫い目</td></tr>
       <tr><td>cameltoe</td><td>キャメルトゥ（服越しの股の形）</td></tr>
@@ -1972,9 +1864,6 @@ table.negative-table td:last-child { width: 70%; }
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>pubic_hair</td><td>陰毛</td></tr>
       <tr><td>female_pubic_hair</td><td>女性の陰毛</td></tr>
-      <tr><td>landing_strip</td><td>ライン状に残した陰毛</td></tr>
-      <tr><td>heart-shaped_pubic_hair</td><td>ハート型の陰毛</td></tr>
-      <tr><td>trimmed</td><td>整えた陰毛</td></tr>
     </table>
   </div>
   <div class="note"><strong>陰毛</strong></div>
@@ -1995,9 +1884,7 @@ table.negative-table td:last-child { width: 70%; }
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>orgasm</td><td>オーガズム・絶頂</td></tr>
-      <tr><td>clitoral_orgasm</td><td>クリトリスでの絶頂</td></tr>
       <tr><td>vaginal_orgasm</td><td>膣での絶頂</td></tr>
-      <tr><td>nipple_orgasm</td><td>乳首での絶頂</td></tr>
     </table>
   </div>
   <div class="note"><strong>絶頂</strong></div>
@@ -2008,7 +1895,6 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>mind_break</td><td>メスガキ・メス顔・心が折れる</td></tr>
       <tr><td>ahegao</td><td>アヘ顔・だらしない絶頂顔</td></tr>
       <tr><td>rolling_eyes</td><td>目を白黒させる</td></tr>
-      <tr><td>full_body_blush</td><td>全身紅潮</td></tr>
       <tr><td>torogao</td><td>とろ顔・蕩けた表情</td></tr>
       <tr><td>peace_sign</td><td>ピースサイン（事後や絶頂時に）</td></tr>
       <tr><td>double_v</td><td>両手ピース</td></tr>
@@ -2022,11 +1908,9 @@ table.negative-table td:last-child { width: 70%; }
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>shaky_legs</td><td>脚がガクガク</td></tr>
       <tr><td>trembling</td><td>震えている</td></tr>
-      <tr><td>convulsion</td><td>痙攣</td></tr>
       <tr><td>fucked_silly</td><td>イキ狂い</td></tr>
-      <tr><td>fucked_stupid</td><td>壊れたような状態</td></tr>
-      <tr><td>brain_fuck</td><td>脳が溶けるほどの快感</td></tr>
-      <tr><td>pleasure_corruption</td><td>快感による堕落</td></tr>
+      <tr><td>mind break</td><td>脳が溶けるほどの快感</td></tr>
+      <tr><td>pleasure_corruption</td><td>快感による堕落（裏付けなし）</td></tr>
     </table>
   </div>
   <div class="note"><strong>体の反応・状態</strong></div>
@@ -2048,10 +1932,10 @@ table.negative-table td:last-child { width: 70%; }
   <div class="table-wrap">
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
-      <tr><td>teacher_student</td><td>教師と生徒</td></tr>
-      <tr><td>boss_employee</td><td>上司と部下</td></tr>
-      <tr><td>doctor_patient</td><td>医師と患者</td></tr>
-      <tr><td>nurse_patient</td><td>看護師と患者</td></tr>
+      <tr><td>teacher_and_student</td><td>教師と生徒</td></tr>
+      <tr><td>boss_employee</td><td>上司と部下（裏付けなし）</td></tr>
+      <tr><td>doctor_patient</td><td>医師と患者（裏付けなし）</td></tr>
+      <tr><td>nurse_patient</td><td>看護師と患者（裏付けなし）</td></tr>
     </table>
   </div>
   <div class="note"><strong>職業・立場の関係</strong></div>
@@ -2062,6 +1946,7 @@ table.negative-table td:last-child { width: 70%; }
       <tr><td>age_difference</td><td>年の差</td></tr>
       <tr><td>shota</td><td>少年（性的文脈）</td></tr>
       <tr><td>loli</td><td>少女（性的文脈）</td></tr>
+      <tr><td>bishounen</td><td>美少年</td></tr>
     </table>
   </div>
   <div class="note"><strong>年齢差・属性</strong></div>
@@ -2070,9 +1955,7 @@ table.negative-table td:last-child { width: 70%; }
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>netorare</td><td>NTR・寝取られ</td></tr>
-      <tr><td>netori</td><td>寝取り（主人が奪う）</td></tr>
       <tr><td>cheating</td><td>浮気</td></tr>
-      <tr><td>adultery</td><td>不倫</td></tr>
     </table>
   </div>
   <div class="note"><strong>寝取られ・浮気</strong></div>
@@ -2082,7 +1965,6 @@ table.negative-table td:last-child { width: 70%; }
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>yuri</td><td>百合・女性同士</td></tr>
       <tr><td>yaoi</td><td>やおい・男性同士</td></tr>
-      <tr><td>trap</td><td>男の娘</td></tr>
       <tr><td>crossdressing</td><td>女装</td></tr>
       <tr><td>tomboy</td><td>男勝りなの子</td></tr>
       <tr><td>reverse_trap</td><td>男装の麗人</td></tr>
@@ -2101,18 +1983,14 @@ table.negative-table td:last-child { width: 70%; }
   <div class="table-wrap">
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
-      <tr><td>insemination</td><td>受精・種付け</td></tr>
       <tr><td>aphrodisiac</td><td>媚薬</td></tr>
-      <tr><td>love_potion</td><td>恋の薬</td></tr>
-      <tr><td>pheromone</td><td>フェロモン</td></tr>
-      <tr><td>heat</td><td>発情（動物的）</td></tr>
+      <tr><td>potion</td><td>ポーション（薬）</td></tr>
+      <tr><td>pheromone</td><td>フェロモン（裏付けなし）</td></tr>
       <tr><td>estrus</td><td>発情期</td></tr>
-      <tr><td>mating</td><td>交尾</td></tr>
-      <tr><td>mating_ritual</td><td>交尾の儀式</td></tr>
-      <tr><td>marking</td><td>マーキング（所有宣言）</td></tr>
+      <tr><td>mating, ritual</td><td>交尾の儀式</td></tr>
+      <tr><td>marking</td><td>マーキング（所有宣言）（裏付けなし）</td></tr>
       <tr><td>bite_mark</td><td>噛み跡</td></tr>
       <tr><td>hickey</td><td>キスマーク</td></tr>
-      <tr><td>love_bite</td><td>愛の噛み跡</td></tr>
     </table>
   </div>
   <div class="note"><strong>種付け・媚薬・発情・跡</strong></div>
@@ -2121,14 +1999,11 @@ table.negative-table td:last-child { width: 70%; }
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>arm_grab</td><td>腕を掴む</td></tr>
-      <tr><td>wrist_grab</td><td>手首を掴む</td></tr>
       <tr><td>thigh_grab</td><td>太ももを掴む</td></tr>
-      <tr><td>hip_grab</td><td>腰を掴む</td></tr>
-      <tr><td>waist_grab</td><td>ウエストを掴む</td></tr>
+      <tr><td>torso_grab</td><td>腰を掴む</td></tr>
       <tr><td>spanking</td><td>スパンキング・尻叩き</td></tr>
-      <tr><td>caning</td><td>杖打ち</td></tr>
-      <tr><td>paddling</td><td>板で叩く</td></tr>
-      <tr><td>face_slap</td><td>顔を叩く</td></tr>
+      <tr><td>cane</td><td>杖</td></tr>
+      <tr><td>slapping</td><td>顔を叩く</td></tr>
     </table>
   </div>
   <div class="note"><strong>掴む・叩く</strong></div>
@@ -2138,10 +2013,6 @@ table.negative-table td:last-child { width: 70%; }
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>asphyxiation</td><td>窒息</td></tr>
       <tr><td>rough_sex</td><td>荒い性行為</td></tr>
-      <tr><td>passionate_sex</td><td>激しい情熱的な性行</td></tr>
-      <tr><td>gentle_sex</td><td>優しい性行為</td></tr>
-      <tr><td>romantic_sex</td><td>ロマンチックな性行為</td></tr>
-      <tr><td>loving_sex</td><td>愛情のある性行為</td></tr>
     </table>
   </div>
   <div class="note"><strong>窒息・行為の雰囲気</strong></div>
@@ -2153,7 +2024,6 @@ table.negative-table td:last-child { width: 70%; }
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>ffm_threesome</td><td>女男女の3P（2女1男）</td></tr>
-      <tr><td>two_girls_one_boy</td><td>2人の女の子と1人の男の子</td></tr>
       <tr><td>bisexual_female</td><td>女性同士も行為する（FFM文脈）</td></tr>
       <tr><td>harem</td><td>ハーレム（1男に複数女）</td></tr>
       <tr><td>polyamory</td><td>ポリアモリー（複数人恋愛関係）</td></tr>
@@ -2165,14 +2035,12 @@ table.negative-table td:last-child { width: 70%; }
   <div class="table-wrap">
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
-      <tr><td>double_blowjob</td><td>2人で同時にフェラ</td></tr>
-      <tr><td>double_paizuri</td><td>2人の胸で同時にパイズリ</td></tr>
-      <tr><td>shared_boyfriend</td><td>彼氏を共有する</td></tr>
+      <tr><td>shared_boyfriend</td><td>彼氏を共有する（裏付けなし）</td></tr>
       <tr><td>cuckquean</td><td>彼氏が他の女性とするのを見る・知る女性</td></tr>
-      <tr><td>jealousy</td><td>嫉妬</td></tr>
+      <tr><td>jealous</td><td>嫉妬</td></tr>
       <tr><td>competition</td><td>彼を巡る争い・競争</td></tr>
-      <tr><td>co_wives</td><td>同じ夫を持つ複数の妻</td></tr>
-      <tr><td>sister_wives</td><td>姉妹妻（ポリアモリー）</td></tr>
+      <tr><td>co_wives</td><td>同じ夫を持つ複数の妻（裏付けなし）</td></tr>
+      <tr><td>sister_wives</td><td>姉妹妻（ポリアモリー）（裏付けなし）</td></tr>
     </table>
   </div>
   <div class="note"><strong>2人同時・彼氏共有</strong></div>
@@ -2181,7 +2049,10 @@ table.negative-table td:last-child { width: 70%; }
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>multiple_girls</td><td>複数の女性が登場</td></tr>
+      <tr><td>solo</td><td>単体・1人だけ</td></tr>
+      <tr><td>1girl</td><td>女性1人（タグ構文）</td></tr>
       <tr><td>1boy</td><td>男性1人（タグ構文）</td></tr>
+      <tr><td>hetero</td><td>男女の組み合わせ</td></tr>
       <tr><td>2girls</td><td>女性2人（タグ構文）</td></tr>
       <tr><td>3girls</td><td>女性3人（タグ構文）</td></tr>
     </table>
@@ -2192,15 +2063,11 @@ table.negative-table td:last-child { width: 70%; }
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>girl_sandwich</td><td>女性に挟まれる（男が中央）</td></tr>
-      <tr><td>breast_smothering</td><td>両側から胸で顔を挟む（2女1男）</td></tr>
-      <tr><td>twin_blowjob</td><td>双子や似た者同士でのダブルフェラ</td></tr>
       <tr><td>cooperative_paizuri</td><td>協力してパイズリ</td></tr>
       <tr><td>cooperative_fellatio</td><td>協力してフェラ</td></tr>
-      <tr><td>taking_turns</td><td>順番に楽しむ</td></tr>
-      <tr><td>group_kiss</td><td>複数人でキス</td></tr>
-      <tr><td>breast_to_breast</td><td>胸と胸を合わせる（女性同士）</td></tr>
-      <tr><td>yuri_and_het</td><td>百合＋男女の混合</td></tr>
-      <tr><td>mixed_harem</td><td>男女混在のハーレム</td></tr>
+      <tr><td>taking_turns</td><td>順番に楽しむ（裏付けなし）</td></tr>
+      <tr><td>kiss</td><td>キス</td></tr>
+      <tr><td>yuri, hetero</td><td>百合＋男女の混合</td></tr>
     </table>
   </div>
   <div class="note"><strong>協力・交代プレイ</strong></div>
@@ -2211,19 +2078,19 @@ table.negative-table td:last-child { width: 70%; }
   <div class="table-wrap">
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
-      <tr><td>morning_sex</td><td>朝の性行為</td></tr>
-      <tr><td>shower_sex</td><td>シャワー中の性行為</td></tr>
-      <tr><td>bath_sex</td><td>お風呂での性行為</td></tr>
-      <tr><td>pool_sex</td><td>プールでの性行為</td></tr>
-      <tr><td>beach_sex</td><td>ビーチでの性行為</td></tr>
-      <tr><td>car_sex</td><td>車内での性行為</td></tr>
-      <tr><td>office_sex</td><td>オフィスでの性行為</td></tr>
-      <tr><td>classroom_sex</td><td>教室での性行為</td></tr>
-      <tr><td>library_sex</td><td>図書室での性行為</td></tr>
-      <tr><td>hospital_sex</td><td>病院での性行為</td></tr>
-      <tr><td>church_sex</td><td>教会での性行為</td></tr>
-      <tr><td>outdoor_sex</td><td>野外での性行為</td></tr>
-      <tr><td>alley_sex</td><td>路地裏での性行為</td></tr>
+      <tr><td>sex, morning</td><td>朝の性行為</td></tr>
+      <tr><td>sex, showering</td><td>シャワー中の性行為</td></tr>
+      <tr><td>sex, bathing</td><td>お風呂での性行為</td></tr>
+      <tr><td>sex, pool</td><td>プールでの性行為</td></tr>
+      <tr><td>sex, beach</td><td>ビーチでの性行為</td></tr>
+      <tr><td>sex, car</td><td>車内での性行為</td></tr>
+      <tr><td>sex, office</td><td>オフィスでの性行為</td></tr>
+      <tr><td>sex, classroom</td><td>教室での性行為</td></tr>
+      <tr><td>sex, library</td><td>図書室での性行為</td></tr>
+      <tr><td>sex, hospital</td><td>病院での性行為</td></tr>
+      <tr><td>sex, church</td><td>教会での性行為</td></tr>
+      <tr><td>sex, outdoors</td><td>野外での性行為</td></tr>
+      <tr><td>sex, alley</td><td>路地裏での性行為</td></tr>
     </table>
   </div>
   <div class="note"><strong>場所でする：いろいろ</strong></div>
@@ -2231,18 +2098,18 @@ table.negative-table td:last-child { width: 70%; }
   <div class="table-wrap">
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
-      <tr><td>elevator_sex</td><td>エレベーターでの性行為</td></tr>
-      <tr><td>train_sex</td><td>電車での性行為</td></tr>
-      <tr><td>bus_sex</td><td>バスでの性行為</td></tr>
-      <tr><td>toilet_sex</td><td>トイレでの性行為</td></tr>
-      <tr><td>locker_room_sex</td><td>更衣室での性行為</td></tr>
-      <tr><td>storage_room_sex</td><td>倉庫での性行為</td></tr>
-      <tr><td>rooftop_sex</td><td>屋上での性行為</td></tr>
-      <tr><td>stairwell_sex</td><td>階段での性行為</td></tr>
-      <tr><td>hallway_sex</td><td>廊下での性行為</td></tr>
-      <tr><td>kitchen_sex</td><td>キッチンでの性行為</td></tr>
-      <tr><td>living_room_sex</td><td>リビングでの性行為</td></tr>
-      <tr><td>bedroom_sex</td><td>寝室での性行為</td></tr>
+      <tr><td>sex, elevator</td><td>エレベーターでの性行為</td></tr>
+      <tr><td>sex, train</td><td>電車での性行為</td></tr>
+      <tr><td>sex, bus</td><td>バスでの性行為</td></tr>
+      <tr><td>sex, toilet</td><td>トイレでの性行為</td></tr>
+      <tr><td>sex, locker_room</td><td>更衣室での性行為</td></tr>
+      <tr><td>sex, storage_room</td><td>倉庫での性行為</td></tr>
+      <tr><td>sex, rooftop</td><td>屋上での性行為</td></tr>
+      <tr><td>sex, stairs</td><td>階段での性行為</td></tr>
+      <tr><td>sex, hallway</td><td>廊下での性行為</td></tr>
+      <tr><td>sex, kitchen</td><td>キッチンでの性行為</td></tr>
+      <tr><td>sex, living_room</td><td>リビングでの性行為</td></tr>
+      <tr><td>sex, bedroom</td><td>寝室での性行為</td></tr>
     </table>
   </div>
   <div class="note"><strong>場所でする：乗り物・建物内</strong></div>
@@ -2250,15 +2117,15 @@ table.negative-table td:last-child { width: 70%; }
   <div class="table-wrap">
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
-      <tr><td>hotel_room</td><td>ホテル</td></tr>
+      <tr><td>Love Hotel</td><td>ラブホテル</td></tr>
       <tr><td>love_hotel</td><td>ラブホテル</td></tr>
       <tr><td>onsen</td><td>温泉</td></tr>
-      <tr><td>sentou</td><td>銭湯</td></tr>
+      <tr><td>bathhouse</td><td>銭湯</td></tr>
       <tr><td>sauna</td><td>サウナ</td></tr>
       <tr><td>gym</td><td>体育館・ジム</td></tr>
-      <tr><td>track_field</td><td>グラウンド</td></tr>
+      <tr><td>running_track</td><td>グラウンド</td></tr>
       <tr><td>infirmary</td><td>保健室</td></tr>
-      <tr><td>club_room</td><td>部室</td></tr>
+      <tr><td>clubroom</td><td>部室</td></tr>
       <tr><td>rooftop</td><td>屋上</td></tr>
       <tr><td>balcony</td><td>バルコニー</td></tr>
       <tr><td>window</td><td>窓辺</td></tr>
@@ -2271,8 +2138,8 @@ table.negative-table td:last-child { width: 70%; }
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>against_glass</td><td>ガラスに押し付ける</td></tr>
       <tr><td>against_wall</td><td>壁に押し付ける</td></tr>
-      <tr><td>against_door</td><td>ドアに押し付ける</td></tr>
-      <tr><td>against_table</td><td>テーブルに押し付ける</td></tr>
+      <tr><td>against_wall, door</td><td>ドアに押し付ける</td></tr>
+      <tr><td>against_wall, table</td><td>テーブルに押し付ける</td></tr>
     </table>
   </div>
   <div class="note"><strong>押し付ける</strong></div>
@@ -2281,15 +2148,14 @@ table.negative-table td:last-child { width: 70%; }
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
       <tr><td>bent_over</td><td>前かがみ・屈む</td></tr>
-      <tr><td>bent_over_table</td><td>テーブルに手をつく</td></tr>
       <tr><td>lying</td><td>横たわる</td></tr>
       <tr><td>on_bed</td><td>ベッドの上</td></tr>
       <tr><td>on_floor</td><td>床の上</td></tr>
       <tr><td>on_desk</td><td>机の上</td></tr>
       <tr><td>on_chair</td><td>椅子の上</td></tr>
-      <tr><td>on_counter</td><td>カウンターの上</td></tr>
-      <tr><td>on_sofa</td><td>ソファの上</td></tr>
-      <tr><td>on_toilet</td><td>トイレの上</td></tr>
+      <tr><td>counter</td><td>カウンター</td></tr>
+      <tr><td>on_couch</td><td>ソファの上</td></tr>
+      <tr><td>sitting, toilet</td><td>トイレの上</td></tr>
     </table>
   </div>
   <div class="note"><strong>体勢・乗る場所</strong></div>
@@ -2297,11 +2163,9 @@ table.negative-table td:last-child { width: 70%; }
   <div class="table-wrap">
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
-      <tr><td>in_bath</td><td>お風呂の中</td></tr>
       <tr><td>in_water</td><td>水中</td></tr>
-      <tr><td>in_pool</td><td>プールの中</td></tr>
-      <tr><td>showering_together</td><td>一緒にシャワー</td></tr>
-      <tr><td>bathing_together</td><td>一緒にお風呂</td></tr>
+      <tr><td>showering</td><td>シャワー</td></tr>
+      <tr><td>bathing</td><td>入浴</td></tr>
     </table>
   </div>
   <div class="note"><strong>一緒に入浴・水中</strong></div>
@@ -2309,12 +2173,10 @@ table.negative-table td:last-child { width: 70%; }
   <div class="table-wrap">
     <table>
       <tr><th>タグ</th><th>意味</th></tr>
-      <tr><td>sleeping_together</td><td>一緒に寝る</td></tr>
+      <tr><td>sleeping</td><td>眠っている</td></tr>
       <tr><td>cuddling</td><td>抱き合う</td></tr>
-      <tr><td>spooning_nude</td><td>裸でスプーン</td></tr>
       <tr><td>afterglow</td><td>事後の余韻</td></tr>
-      <tr><td>pillow_talk</td><td>枕元の会話</td></tr>
-      <tr><td>smoking_after_sex</td><td>事後のタバコ</td></tr>
+      <tr><td>pillow, talking</td><td>枕元の会話</td></tr>
     </table>
   </div>
   <div class="note"><strong>事後・一緒に過ごす</strong></div>
@@ -2326,13 +2188,13 @@ table.negative-table td:last-child { width: 70%; }
     <table class="negative-table">
       <tr class="negative-row"><th>カテゴリ</th><th>タグ</th></tr>
       <tr class="negative-row"><td>画質崩壊</td><td>lowres, bad_anatomy, bad_hands, text, english_text, error, missing_fingers, extra_digit, fewer_digits, cropped, worst_quality, low_quality, normal_quality, jpeg_artifacts, signature, watermark, username, blurry</td></tr>
-      <tr class="negative-row"><td>線画問題</td><td>thick_lineart, thick_outlines, heavy_lineart, rough_lineart, dark_outlines, black_outlines</td></tr>
-      <tr class="negative-row"><td>目・まつ毛</td><td>thick_eyelashes, long_eyelashes, heavy_makeup, upturned_eyes, tsurime, sharp_eyes, mature_eyes, narrow_eyes, slit_pupils</td></tr>
-      <tr class="negative-row"><td>写実・3D</td><td>realistic, photorealistic, realistic_eyes, lifelike_eyes, detailed_sclera, western, western_comic, cartoon, 3d, 3d_render, cgi</td></tr>
-      <tr class="negative-row"><td>アナログ・手描き</td><td>sketch, rough_sketch, hand_drawn, pencil_sketch, traditional_media, watercolor, oil_painting, canvas_texture, paper_texture, paint_strokes, brush_strokes, uneven_coloring, sketch_lines, scanned</td></tr>
-      <tr class="negative-row"><td>光・エフェクト</td><td>star-shaped_pupils, heart-shaped_pupils, cross-shaped_pupils, sparkle, lens_flare, glowing_eyes, glowing_pupils, light_particles, excessive_highlights</td></tr>
-      <tr class="negative-row"><td>背景・フォーカス</td><td>photo_background, realistic_background, depth_of_field, bokeh, soft_focus</td></tr>
-      <tr class="negative-row"><td>塗り・画風競合</td><td>soft_shading, airbrush, grainy, noise, monochrome, greyscale, muted_colors, pastel_colors</td></tr>
+      <tr class="negative-row"><td>線画問題</td><td>thick_lineart, thick lineart, rough_lineart, outline</td></tr>
+      <tr class="negative-row"><td>目・まつ毛</td><td>thick_eyelashes, long_eyelashes, makeup, upturned_eyes, tsurime, sharp_eyes, mature_eyes, narrowed_eyes, slit_pupils</td></tr>
+      <tr class="negative-row"><td>写実・3D</td><td>realistic, photorealistic, realistic_eyes, detailed_sclera, cowboy_western, western_comics_(style), cartoon, 3d, 3d_render, cgi</td></tr>
+      <tr class="negative-row"><td>アナログ・手描き</td><td>sketch, hand_drawn, pencil_sketch, traditional_media, watercolor, oil_painting, texture, paper_texture, paint_strokes, brush_strokes, uneven_coloring, sketch_lines, scanned</td></tr>
+      <tr class="negative-row"><td>光・エフェクト</td><td>star-shaped_pupils, heart-shaped_pupils, cross-shaped_pupils, sparkle, lens_flare, glowing_eyes, light_particles, excessive_highlights</td></tr>
+      <tr class="negative-row"><td>背景・フォーカス</td><td>photo_background, depth_of_field, bokeh, soft_focus</td></tr>
+      <tr class="negative-row"><td>塗り・画風競合</td><td>soft_shading, airbrush, grainy, monochrome, greyscale, muted_color, pastel_colors</td></tr>
     </table>
   </div>
 
@@ -2344,14 +2206,13 @@ table.negative-table td:last-child { width: 70%; }
     <table class="combo-table">
       <colgroup><col class="combo-category-col"><col class="combo-tags-col"></colgroup>
       <tr class="negative-row"><th>カテゴリ</th><th>タグ</th></tr>
-      <tr class="negative-row"><td>例1：胸を揉む（衣服あり・基本）</td><td>pov, disembodied_hand, breast_grab, groping, breast_squeeze, breast_focus, close_up, looking_at_viewer, blush, embarrassed, open_mouth, shirt, from_above</td></tr>
+      <tr class="negative-row"><td>例1：胸を揉む（衣服あり・基本）</td><td>pov, disembodied_hand, breast_grab, groping, breast_focus, close_up, looking_at_viewer, blush, embarrassed, open_mouth, shirt, from_above</td></tr>
       <tr class="negative-row"><td>例2：衣服の下に手を入れて胸を触る</td><td>pov, disembodied_hand, under_clothes, under_shirt, breast_grab, groping, breast_focus, close_up, blush, looking_at_viewer, clothes_lift, reaching_out</td></tr>
       <tr class="negative-row"><td>例3：乳首をつまむ（露出）</td><td>pov, disembodied_hand, nipple_tweak, nipples, breast_focus, close_up, looking_at_viewer, blush, open_mouth, embarrassed</td></tr>
-      <tr class="negative-row"><td>例4：乳首を引っ張る</td><td>pov, disembodied_hand, nipple_pull, nipples, breast_focus, close_up, looking_at_viewer, blush, wince, trembling</td></tr>
-      <tr class="negative-row"><td>例5：指で乳首を擦る・転がす</td><td>pov, disembodied_hand, nipple_rub, fingering_nipples, nipples, breast_focus, close_up, blush, looking_at_viewer</td></tr>
-      <tr class="negative-row"><td>例6：後ろから回して胸を触る</td><td>pov, disembodied_hand, breast_grab, groping, from_behind, hug_from_behind, breast_focus, close_up, blush, surprised, open_mouth, looking_back</td></tr>
-      <tr class="negative-row"><td>例7：前かがみで胸元を見せる（非接触）</td><td>pov, looking_at_viewer, leaning_forward, breast_focus, cleavage, close_up, cowboy_shot, hand_on_own_chest, blush, smile</td></tr>
-      <tr class="negative-row"><td>例8：自分の胸を持ち上げてアピール</td><td>first_person_perspective, looking_at_viewer, grabbing_own_breast, lifting_own_breasts, breast_focus, large_breasts, close_up, from_above</td></tr>
+      <tr class="negative-row"><td>例4：指で乳首を擦る・転がす</td><td>pov, disembodied_hand, nipple_stimulation, nipples, breast_focus, close_up, blush, looking_at_viewer</td></tr>
+      <tr class="negative-row"><td>例5：後ろから回して胸を触る</td><td>pov, disembodied_hand, breast_grab, groping, from_behind, hug_from_behind, breast_focus, close_up, blush, surprised, open_mouth, looking_back</td></tr>
+      <tr class="negative-row"><td>例6：前かがみで胸元を見せる（非接触）</td><td>pov, looking_at_viewer, leaning_forward, breast_focus, cleavage, close_up, cowboy_shot, hand_on_own_chest, blush, smile</td></tr>
+      <tr class="negative-row"><td>例7：自分の胸を持ち上げてアピール</td><td>first_person_perspective, looking_at_viewer, grabbing_own_breast, breast_hold, breast_focus, large_breasts, close_up, from_above</td></tr>
     </table>
   </div>
 </section>
